@@ -1,0 +1,10 @@
+<header>
+  <img *ngIf="config?.image" [src]="config.image" alt="Header image" />
+  <h1>{{ config?.title }}</h1>
+
+  <nav *ngIf="config?.breadcrumbs">
+    <a *ngFor="let crumb of config.breadcrumbs" [routerLink]="crumb.url">
+      {{ crumb.label }}
+    </a>
+  </nav>
+</header>

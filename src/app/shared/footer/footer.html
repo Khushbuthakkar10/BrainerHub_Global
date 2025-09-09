@@ -1,0 +1,8 @@
+<footer>
+  <img *ngIf="config?.showImage" [src]="config.imageUrl" alt="Footer image" />
+  <ul>
+    <li *ngFor="let link of config?.links">
+      <a [routerLink]="link.url">{{ link.label }}</a>
+    </li>
+  </ul>
+</footer>
