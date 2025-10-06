@@ -1,20 +1,37 @@
-import { Component } from '@angular/core';
-import { LayoutService } from '../../service/layout/layout-service';
-import { RouterModule } from '@angular/router';
+import { Component, HostListener, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { MatDrawer, MatDrawerContainer, MatDrawerContent, MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 @Component({
   selector: 'app-header',
-  imports: [RouterModule,CommonModule],
+  standalone: true,
+  imports: [
+    CommonModule,
+    MatSidenavModule,
+    MatListModule,
+    MatExpansionModule,
+    MatButtonModule,
+    MatIconModule
+  ],
   templateUrl: './header.html',
   styleUrl: './header.scss'
 })
 export class Header {
- config: any;
+  @ViewChild('drawer') drawer!: MatDrawer;
 
-  constructor(private layoutService: LayoutService) {}
+  isMobile = false;
+
+  @HostListener('window:resize')
+  checkScreen() {
+    if (typeof window !== 'undefined') {
+      this.isMobile = window.innerWidth < 520;
+    }
+  }
 
   ngOnInit() {
-    this.layoutService.headerConfig$.subscribe(cfg => this.config = cfg);
+    this.checkScreen();
   }
 }

@@ -1,1 +1,205 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+
+
+// Common CSS
+@import 'swiper/swiper-bundle.css';
+
+
+
+// Common CSS
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #192B37;
+  overflow-x: hidden;
+  transition: all 0.5s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.5s ease;
+}
+
+input,
+select,
+textarea,
+input:focus-within,
+select:focus-within,
+textarea:focus-within {
+  outline: none;
+}
+
+.img-respoansive {
+  max-width: 100%;
+  height: auto;
+}
+
+a,
+button {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.siteContainer {
+  max-width: 1187px;
+  padding: 0 20px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.pageWrapper {
+  overflow: hidden;
+}
+
+@keyframes rotate-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-250px * 7))
+    }
+}
+
+// BUTTON CSS
+.primaryBtn {
+  background: #842013;
+  background: linear-gradient(49deg, rgba(132, 32, 19, 1) 0%, rgba(255, 86, 64, 1) 100%);
+  border: none;
+  padding: 12px 25px;
+  border-radius: 55px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #fff;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+}
+
+// HEADING CSS
+.centerheading {
+  text-align: center;
+  margin-bottom: 60px;
+
+  @media only screen and (max-width: 991px) {
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    font-size: 48px;
+    color: #FFFFFF;
+    line-height: 62px;
+    font-weight: 700;
+    position: relative;
+    font-family: "Open Sans", sans-serif;
+
+    @media only screen and (max-width: 991px) {
+      font-size: 32px;
+      line-height: 42px;
+    }
+
+    &::after {
+      content: '';
+      height: 4px;
+      width: 90px;
+      display: block;
+      background: #842013;
+      background: linear-gradient(49deg, rgba(132, 32, 19, 1) 0%, rgba(255, 86, 64, 1) 100%);
+      border-radius: 5px;
+      margin: 15px auto 0;
+    }
+  }
+
+  p {
+    font-size: 16px;
+    color: #eee;
+    line-height: 24px;
+    margin-top: 22px;
+    max-width: 900px;
+    margin: 22px auto 0;
+
+    @media only screen and (max-width: 991px) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  &.mb-0 {
+    margin-bottom: 0;
+  }
+
+  &--small {
+    .centerheading__title {
+      font-size: 36px;
+      line-height: 48px;
+
+      @media only screen and (max-width: 991px) {
+        font-size: 28px;
+        line-height: 38px;
+      }
+    }
+  }
+}
+
+.sectionHeading {
+  &__title {
+    font-size: 36px;
+    color: #FFFFFF;
+    line-height: 48px;
+    font-weight: 700;
+    position: relative;
+    font-family: "Open Sans", sans-serif;
+
+    @media only screen and (max-width: 991px) {
+      font-size: 28px;
+      line-height: 38px;
+    }
+
+    &::after {
+      content: '';
+      height: 4px;
+      width: 90px;
+      display: block;
+      background: #842013;
+      background: linear-gradient(49deg, rgba(132, 32, 19, 1) 0%, rgba(255, 86, 64, 1) 100%);
+      border-radius: 5px;
+      margin-top: 15px;
+    }
+  }
+
+  p {
+    font-size: 16px;
+    color: #eee;
+    line-height: 24px;
+    margin-top: 22px;
+
+    @media only screen and (max-width: 991px) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+}

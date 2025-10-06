@@ -1,0 +1,755 @@
+.heroBanner {
+    margin: 100px 0;
+    position: relative;
+
+    @media only screen and (max-width: 991px) {
+        margin: 80px 0;
+    }
+
+    &::after {
+        background-image: url('../../../../public/gredient-circle.svg');
+        content: '';
+        height: 550px;
+        width: 550px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        right: -200px;
+        bottom: -160px;
+
+        @media only screen and (max-width: 991px) {
+            height: 300px;
+            width: 300px;
+        }
+    }
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: stretch;
+        gap: 30px;
+        position: relative;
+        z-index: 1;
+
+        @media only screen and (max-width: 991px) {
+            flex-direction: column;
+            gap: 22px;
+        }
+
+        &>div {
+            flex: 1 0 0;
+        }
+    }
+
+    &__content {
+        p {
+            font-size: 16px;
+            color: #eee;
+            line-height: 24px;
+            margin-top: 22px;
+
+            @media only screen and (max-width: 991px) {
+                font-size: 14px;
+                line-height: 20px;
+            }
+        }
+    }
+
+    &__title {
+        font-size: 62px;
+        color: #FFFFFF;
+        line-height: 75px;
+        font-weight: 700;
+        position: relative;
+        font-family: "Open Sans", sans-serif;
+
+        @media only screen and (max-width: 991px) {
+            font-size: 50px;
+            line-height: 60px;
+        }
+
+        @media only screen and (max-width: 767px) {
+            font-size: 42px;
+            line-height: 52px;
+        }
+
+        &::after {
+            content: '';
+            height: 4px;
+            width: 90px;
+            display: block;
+            background: #842013;
+            background: linear-gradient(49deg, rgba(132, 32, 19, 1) 0%, rgba(255, 86, 64, 1) 100%);
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+    }
+}
+
+.mediaContentBox {
+    margin: 100px 0;
+    position: relative;
+
+    @media only screen and (max-width: 991px) {
+        margin: 80px 0;
+    }
+
+    &::after {
+        background-image: url('../../../../public/gredient-circle.svg');
+        content: '';
+        height: 550px;
+        width: 550px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        left: -200px;
+        bottom: -100px;
+
+        @media only screen and (max-width: 991px) {
+            height: 300px;
+            width: 300px;
+        }
+    }
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: stretch;
+        gap: 30px;
+        position: relative;
+        z-index: 1;
+
+        @media only screen and (max-width: 991px) {
+            flex-direction: column;
+            gap: 22px;
+        }
+
+        &>div {
+            flex: 1 0 0;
+        }
+    }
+
+    &__info {
+        .primaryBtn {
+            margin-top: 40px;
+
+            @media only screen and (max-width: 991px) {
+                margin-top: 28px;
+            }
+        }
+    }
+
+    &__image {
+        padding-right: 30px;
+        padding-bottom: 24px;
+        position: relative;
+        max-width: 500px;
+        width: 100%;
+
+        @media only screen and (max-width: 991px) {
+            padding-right: 18px;
+            padding-bottom: 18px;
+        }
+
+        &::after {
+            content: "";
+            border: 1px solid #FF5640;
+            border-radius: 50%;
+            height: calc(100% - 25px);
+            width: calc(100% - 30px);
+            display: block;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+
+            @media only screen and (max-width: 991px) {
+                height: calc(100% - 18px);
+                width: calc(100% - 18px);
+            }
+        }
+
+        img {
+            width: 100%;
+
+            border-radius: 50%;
+        }
+    }
+}
+
+.industryModule {
+    padding: 110px 0;
+    background: #1A3242;
+    border-top: 1px solid #47555F;
+    border-bottom: 1px solid #47555F;
+
+    @media only screen and (max-width: 991px) {
+        padding: 80px 0;
+    }
+
+    &__inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 32px;
+
+        @media only screen and (max-width: 991px) {
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media only screen and (max-width: 767px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__button {
+        text-align: center;
+        margin-top: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+
+        @media only screen and (max-width: 991px) {
+            margin-top: 40px;
+        }
+    }
+}
+
+.industryCard {
+    border: 1px solid #47555F;
+    background: #192B37;
+    box-shadow: 0 0 10px 0 #FF564065;
+    border-radius: 20px;
+    width: 100%;
+    padding: 40px;
+    text-align: center;
+
+    @media only screen and (max-width: 991px) {
+        padding: 24px;
+    }
+
+    &__img {
+        height: 90px;
+        width: 90px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        position: relative;
+
+        @media only screen and (max-width: 767px) {
+            height: 75px;
+            width: 75px;
+        }
+
+        &::before {
+            content: '';
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+            border: 3px dashed #FA543E;
+            position: absolute;
+            transition: all 0.5s ease;
+            display: block;
+        }
+
+        img {
+            height: 50px;
+            width: 50px;
+
+            @media only screen and (max-width: 767px) {
+                height: 32px;
+                width: 32px;
+            }
+        }
+    }
+
+    &__title {
+        font-size: 20px;
+        line-height: 30px;
+        color: #FFFFFF;
+        font-weight: 700;
+
+        @media only screen and (max-width: 767px) {
+            font-size: 18px;
+            line-height: 28px;
+        }
+    }
+
+    &:hover {
+        box-shadow: 0 0 20px 0 #FF564085;
+
+        .industryCard__img::before {
+            animation: rotate-animation 10s infinite linear;
+            border-color: #fff;
+            transition: all 0.5s ease;
+        }
+    }
+}
+
+.circularCardModule {
+    margin: 100px 0;
+    position: relative;
+
+    @media only screen and (max-width: 991px) {
+        margin: 80px 0;
+    }
+
+    &::after {
+        background-image: url('../../../../public/gredient-circle.svg');
+        content: '';
+        height: 550px;
+        width: 550px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        right: -250px;
+        bottom: -250px;
+
+        @media only screen and (max-width: 991px) {
+            height: 300px;
+            width: 300px;
+        }
+    }
+
+    &__inner {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 20px;
+        position: relative;
+
+        @media only screen and (max-width: 767px) {
+            flex-direction: column;
+            gap: 65px;
+            justify-content: center;
+        }
+    }
+
+    &__img {
+        position: absolute;
+        left: 0;
+        right: 0;
+        max-width: 590px;
+        height: auto;
+        margin: 0 auto;
+        width: 100%;
+        animation: rotate-animation 10s infinite linear;
+    }
+}
+
+.circularCard {
+    border: 1px solid #47555F;
+    background: #192B37;
+    padding: 32px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px 0 #FF564065;
+    max-width: 460px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+
+    &:first-child {
+        margin-top: 195px;
+    }
+
+    @media only screen and (max-width: 991px) {
+        padding: 24px;
+        max-width: 360px;
+    }
+
+    @media only screen and (max-width: 767px) {
+        max-width: 100%;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    &__title {
+        font-size: 35px;
+        line-height: 46px;
+        color: #fff;
+        font-weight: 700;
+        font-family: "Open Sans", sans-serif;
+
+        @media only screen and (max-width: 991px) {
+            font-size: 26px;
+            line-height: 36px;
+        }
+    }
+
+    p {
+        font-size: 16px;
+        color: #eee;
+        line-height: 24px;
+        margin-top: 22px;
+
+        @media only screen and (max-width: 991px) {
+            font-size: 14px;
+            line-height: 20px;
+        }
+    }
+
+    .primaryBtn {
+        margin-top: 32px;
+    }
+}
+
+.timelineModule {
+    margin: 100px 0;
+    position: relative;
+
+    @media only screen and (max-width: 991px) {
+        margin: 80px 0;
+    }
+
+    &::after {
+        background-image: url('../../../../public/gredient-circle.svg');
+        content: '';
+        height: 550px;
+        width: 550px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        right: -200px;
+        bottom: -160px;
+
+        @media only screen and (max-width: 767px) {
+            height: 300px;
+            width: 300px;
+        }
+    }
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        position: relative;
+        padding: 25px 0;
+
+        &::after {
+            content: '';
+            height: 100%;
+            width: 3px;
+            background: #FF5640;
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+             @media only screen and (max-width: 767px) {
+                transform: none;
+                left: 12px;
+             }
+        }
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        width: calc(50% + 12px);
+        margin-left: 0;
+        position: relative;
+        z-index: 2;
+        flex-direction: row-reverse;
+        @media only screen and (max-width: 767px) {
+            flex-direction: row;
+            width: 100%;
+        }
+
+        &-img {
+            height: 100px;
+            width: 100px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @media only screen and (max-width: 767px) {
+                left: 12px;
+            }
+
+            &::after {
+                height: 120px;
+                width: 120px;
+                content: '';
+                border: 3px solid #FF5640;
+                display: block;
+                position: absolute;
+                border-radius: 50%;
+                background: #192B37;
+                @media only screen and (max-width: 767px) {
+                    height: 75px;
+                width: 75px;
+                }
+            }
+
+            &::before {
+                height: 130px;
+                width: 110px;
+                content: '';
+                display: block;
+                position: absolute;
+                right: 14px;
+                left: auto;
+                background: #192B37;
+                z-index: 1;
+                @media only screen and (max-width: 767px) {
+                    left: 3px;
+                right: auto;
+                 height: 90px;
+                width: 70px;
+                }
+            }
+
+            img {
+                height: 100px;
+                width: 100px;
+                min-width: 100px;
+                position: relative;
+                z-index: 3;
+                @media only screen and (max-width: 767px) {
+                    height: 60px;
+                width: 60px;
+                 min-width: 60px;
+                }
+
+            }
+        }
+
+        &-info {
+            background: #47555F;
+            padding: 10px 22px;
+            border-radius: 10px;
+            position: relative;
+            z-index: 2;
+            margin-right: -10px;
+              @media only screen and (max-width: 767px) {
+                margin-left: 0;
+                margin-right: 0;
+              }
+
+            p {
+                font-size: 16px;
+                color: #EEEEEE;
+                line-height: 22px;
+                font-weight: 400;
+                margin-top: 4px;
+
+                @media only screen and (max-width: 767px) {
+                    font-size: 14px;
+                    line-height: 20px;
+                }
+            }
+        }
+
+        &-title {
+            font-size: 16px;
+            color: #EEEEEE;
+            line-height: 22px;
+            font-weight: 700;
+
+            @media only screen and (max-width: 991px) {
+                font-size: 14px;
+                line-height: 20px;
+            }
+        }
+
+        &:nth-child(odd) {
+            margin-left: auto;
+            margin-right: 0;
+            flex-direction: row;
+            @media only screen and (max-width: 767px) {
+                margin-left: 0;
+            }
+
+
+            .timelineModule__item-img::before {
+                left: 14px;
+                right: auto;
+                @media only screen and (max-width: 767px) {
+                    left: 3px;
+                right: auto;
+                }
+            }
+
+            .timelineModule__item-info {
+                margin-left: -10px;
+                margin-right: 0;
+                @media only screen and (max-width: 767px) {
+                     margin-left: 0px;
+                }
+            }
+        }
+    }
+}
+
+.ctaSection {
+    background-image: url('../../../../public/CTA-img.png');
+    background-size: cover;
+    background-position: center;
+    padding: 110px 0;
+    position: relative;
+    background-attachment: fixed;
+
+    @media only screen and (max-width: 991px) {
+        padding: 80px 0;
+    }
+
+    &::after {
+        content: '';
+        height: 100%;
+        width: 100%;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: #000;
+        opacity: 35%;
+    }
+
+    &__inner {
+        text-align: center;
+        position: relative;
+        z-index: 1;
+
+        p {
+            font-size: 16px;
+            color: #eee;
+            line-height: 24px;
+            max-width: 900px;
+            width: 100%;
+            margin: 22px auto 0;
+
+            @media only screen and (max-width: 991px) {
+                font-size: 14px;
+                line-height: 20px;
+            }
+        }
+    }
+
+    &__title {
+        font-size: 62px;
+        color: #FFFFFF;
+        line-height: 75px;
+        font-weight: 700;
+        position: relative;
+        font-family: "Open Sans", sans-serif;
+
+        @media only screen and (max-width: 991px) {
+            font-size: 50px;
+            line-height: 60px;
+        }
+
+        @media only screen and (max-width: 767px) {
+            font-size: 42px;
+            line-height: 52px;
+        }
+
+        &::after {
+            content: '';
+            height: 4px;
+            width: 90px;
+            display: block;
+            background: #842013;
+            background: linear-gradient(49deg, rgba(132, 32, 19, 1) 0%, rgba(255, 86, 64, 1) 100%);
+            border-radius: 5px;
+            margin: 15px auto 0;
+        }
+    }
+
+    &__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 60px;
+
+        @media only screen and (max-width: 991px) {
+            margin-top: 40px;
+        }
+    }
+}
+
+
+.logoSlider {
+    background: #1A3242;
+    border-top: 1px solid #47555F;
+    border-bottom: 1px solid #47555F;
+    padding: 70px 0;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+      @media only screen and (max-width: 991px) {
+        padding: 20px 0;
+      }
+
+
+    &__track {
+        animation: scroll 40s linear infinite;
+        display: flex;
+        width: calc(250px * 14);
+        gap: 150px;
+         @media only screen and (max-width: 991px) {
+        gap: 100px;
+      }
+    }
+
+    .logoSlide {
+        height: 180px;
+        width: 180px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        min-width: 180px;
+           @media only screen and (max-width: 991px) {
+            height: 120px;
+        width: 120px;
+        min-width: 120px;
+           }
+        img {
+            object-fit: contain;
+            height: 180px;
+            width: 180px;
+             @media only screen and (max-width: 991px) {
+            height: 120px;
+        width: 120px;
+           }
+        }
+        &::after {
+            content: '';
+            height: 18px;
+            width: 48px;
+            position: absolute;
+            background-image: url('../../../../public/Vector.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            right: -100px;
+            @media only screen and (max-width: 991px) {
+                height: 15px;
+            width: 32px;
+            right: -66px;
+            }
+        }
+    }
+}
+
+.newsBlock {
+     margin: 100px 0;
+    position: relative;
+
+    @media only screen and (max-width: 991px) {
+        margin: 80px 0;
+    }
+    &__inner {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+}
+.newsCard {
+    border-radius: 20px;
+    border: 1px solid #47555F;
+}

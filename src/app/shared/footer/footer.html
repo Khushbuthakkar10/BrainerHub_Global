@@ -1,8 +1,83 @@
-<footer>
+<!-- <footer>
   <img *ngIf="config?.showImage" [src]="config.imageUrl" alt="Footer image" />
   <ul>
     <li *ngFor="let link of config?.links">
       <a [routerLink]="link.url">{{ link.label }}</a>
     </li>
   </ul>
+</footer> -->
+<footer class="mainFooter">
+  <div class="mainFooter__top">
+    <div class="siteContainer">
+      <div class="mainFooter__logoBlock">
+        <img src="BrainerHubLogo.png" alt="BrainerHubLogo" class="img-respoansive mainFooter__logo" />
+        <form class="mainFooter__form">
+          <input type="email" placeholder="Enter Your  Email Id ..." />
+          <button type="submit" class="primaryBtn">Subscribe <img src="arrow.svg" alt="Arrow" class="img-respoansive" /></button>
+        </form>
+      </div>
+      <div class="mainFooter__menu">
+        <div class="mainFooter__menu-items">
+          <h5 class="mainFooter__menu-title">Industries</h5>
+          <ul class="mainFooter__menu-list">
+            <li><a href="">Automotive</a></li>
+            <li><a href="">Energy and Resources</a></li>
+            <li><a href="">Finance and Banking</a></li>
+            <li><a href="">Government</a></li>
+            <li><a href="">Healthcare and Life Sciences</a></li>
+            <li><a href="">Insurance</a></li>
+            <li><a href="">Media and Entertainment</a></li>
+            <li><a href="">Payments</a></li>
+          </ul>
+        </div>
+         <div class="mainFooter__menu-items">
+          <h5 class="mainFooter__menu-title">Capabilities</h5>
+          <ul class="mainFooter__menu-list">
+            <li><a href="">Digital Product Acceleration</a></li>
+            <li><a href="">Advisory and Digital Strategy</a></li>
+            <li><a href="">Leading Delivery</a></li>
+            <li><a href="">Digital Engineering</a></li>
+            <li><a href="">Data and AI</a></li>
+            <li><a href="">Operations and Optimization</a></li>
+          </ul>
+        </div>
+         <div class="mainFooter__menu-items">
+          <h5 class="mainFooter__menu-title">Who We Are</h5>
+          <ul class="mainFooter__menu-list">
+            <li><a href="">Sustainability at Endava</a></li>
+            <li><a href="">Partners</a></li>
+            <li><a href="">Locations</a></li>
+            <li><a href="">Leadership</a></li>
+          </ul>
+        </div>
+         <div class="mainFooter__menu-items">
+          <h5 class="mainFooter__menu-title">Links</h5>
+          <ul class="mainFooter__menu-list">
+            <li><a href="">Insights</a></li>
+            <li><a href="">Case Studies</a></li>
+            <li><a href="">Contact Us</a></li>
+          </ul>
+          <h5 class="mainFooter__menu-title">Follow us!</h5>
+          <ul class="mainFooter__socialLink">
+            <li><a href=""><img src="facebook-f.svg" alt="facebook icon" class="img-respoansive" ></a></li>
+            <li><a href=""><img src="insta.svg" alt="facebook icon" class="img-respoansive" ></a></li>
+            <li><a href=""><img src="linkdin.svg" alt="facebook icon" class="img-respoansive" ></a></li>
+            <li><a href=""><img src="youtube.svg" alt="facebook icon" class="img-respoansive" ></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mainFooter__bottom">
+    <div class="siteContainer">
+      <div class="mainFooter__bottom-wrapper">
+        <p>Copyright © 2024 Endava | All Rights Reserved</p>
+        <div class="mainFooter__bottom-links">
+          <a>Terms and Conditions</a>
+          <a>Privacy Policy</a>
+          <a>Statements</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </footer>

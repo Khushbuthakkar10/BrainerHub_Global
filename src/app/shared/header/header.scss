@@ -1,0 +1,145 @@
+.mainHeader {
+    padding: 18px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    @media only screen and (max-width: 1400px) {
+        padding: 18px 20px;
+    }
+}
+
+.mainHeader-logo {
+    height: 50px;
+    width: auto;
+
+    @media only screen and (max-width: 991px) {
+        height: 40px;
+    }
+}
+
+.mainHeader-logo img {
+    height: 100%;
+    width: auto;
+}
+
+.mainHeader-actions {
+    display: flex;
+    align-items: center;
+    gap: 37px;
+
+    @media only screen and (max-width: 991px) {
+        gap: 12px;
+    }
+}
+
+.mainHeader__menuToggle {
+    background: transparent;
+    border: none;
+    height: 48px;
+    width: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media only screen and (max-width: 991px) {
+        height: 40px;
+    width: 40px;
+    }
+}
+
+.mainHeader__menuToggle img {
+    height: 100%;
+    width: 100%;
+}
+
+.mainHeader-search {
+    display: flex;
+    align-items: center;
+    border: 1px solid #FF5640;
+    height: 48px;
+    padding: 12px 20px;
+    border-radius: 24px;
+    gap: 8px;
+    @media only screen and (max-width: 991px) {
+        height: 40px;
+        width: 40px;
+        padding: 8px;
+        justify-content: center;
+    }
+}
+
+.mainHeader-search input {
+    width: 100%;
+
+    @media only screen and (max-width: 991px) {
+            position: absolute;
+    top: 84px;
+    left: 0;
+    right: 0;
+    background: #000;
+    padding: 20px;
+    display: none;
+    }
+}
+.mainHeader-search.active input {
+    display: block;
+}
+
+.mainHeader-search svg {
+    height: 18px;
+    width: 18px;
+}
+
+.mainHeader-search-Box {
+    background: transparent;
+    border: none;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.mainHeader-search-Box::placeholder {
+    color: #ccc;
+}
+
+.menuSidenav {
+    background: #000000;
+    position: fixed;
+    right: -100%;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    max-width: 500px;
+    width: 100%;
+    z-index: 111;
+
+    &__header {
+        padding: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        border-bottom: 1px solid #FF5640;
+          @media only screen and (max-width: 991px) {
+            padding: 12px 20px;
+          }
+    }
+
+    &__menuToggle {
+        height: 24px;
+        width: 24px;
+        background: transparent;
+        border: none;
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &.mat-drawer-opened {
+        right: 0;
+    }
+}

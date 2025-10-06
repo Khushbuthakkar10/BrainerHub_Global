@@ -1,7 +1,327 @@
 <app-header></app-header>
 
-<main>
-  <h2>Home Page Content</h2>
+<main class="pageWrapper">
+  <!-- HERO BANNER START -->
+  <div class="heroBanner">
+    <div class="siteContainer">
+      <div class="heroBanner__inner">
+        <div class="heroBanner__content">
+          <h2 class="heroBanner__title">Technology is our how. And people are our why.</h2>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+            scrambled it to make a type specimen book.</p>
+        </div>
+        <div class="heroBanner__image">
+          <img src="bubble-image.svg" class="img-respoansive" alt="bubble Image" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- HERO BANNER END -->
+
+  <!-- MEDIA CONTENT BOX START -->
+  <div class="mediaContentBox">
+    <div class="siteContainer">
+      <div class="mediaContentBox__inner">
+        <div class="mediaContentBox__image">
+          <img src="about-img.png" class="img-respoansive" alt="about Image" />
+        </div>
+        <div class="mediaContentBox__info">
+          <div class="sectionHeading">
+            <h4 class="sectionHeading__title">For over two decades, we have been harnessing technology to drive
+              meaningful change.</h4>
+            <p>Combining world-class engineering, industry expertise and a people-centric mindset, we consult and
+              partner with our customers to create technological solutions that drive innovation and transform
+              businesses.</p>
+          </div>
+          <button type="submit" class="primaryBtn">Get to know us <img src="arrow.svg" alt="Arrow"
+              class="img-respoansive" /></button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- MEDIA CONTENT BOX END -->
+
+  <!-- INDUSTRY MODULE START -->
+  <div class="industryModule">
+    <div class="siteContainer">
+      <div class="centerheading">
+        <h3 class="centerheading__title">Move your industry forward</h3>
+        <p>Combining world-class engineering, industry expertise and a people-centric mindset, we consult and partner
+          with our customers to create technological solutions that drive innovation and transform businesses.</p>
+      </div>
+      <div class="industryModule__inner">
+        <div class="industryCard">
+          <div class="industryCard__img">
+            <img src="Automotive.svg" alt="Automotive Icon" class="img-respoansive">
+          </div>
+          <h6 class="industryCard__title">Automotive</h6>
+        </div>
+        <div class="industryCard">
+          <div class="industryCard__img">
+            <img src="Energy-Resources.svg" alt="Automotive Icon" class="img-respoansive">
+          </div>
+          <h6 class="industryCard__title">Energy and Resources</h6>
+        </div>
+        <div class="industryCard">
+          <div class="industryCard__img">
+            <img src="Finance-Banking.svg" alt="Automotive Icon" class="img-respoansive">
+          </div>
+          <h6 class="industryCard__title">Finance and Banking</h6>
+        </div>
+        <div class="industryCard">
+          <div class="industryCard__img">
+            <img src="Government.svg" alt="Automotive Icon" class="img-respoansive">
+          </div>
+          <h6 class="industryCard__title">Government</h6>
+        </div>
+        <div class="industryCard">
+          <div class="industryCard__img">
+            <img src="Media-Entertainment.svg" alt="Automotive Icon" class="img-respoansive">
+          </div>
+          <h6 class="industryCard__title">Media and Entertainment</h6>
+        </div>
+        <div class="industryCard">
+          <div class="industryCard__img">
+            <img src="Insurance.svg" alt="Automotive Icon" class="img-respoansive">
+          </div>
+          <h6 class="industryCard__title">Insurance</h6>
+        </div>
+      </div>
+      <div class="industryModule__button">
+        <button class="primaryBtn">Get to know us <img src="arrow.svg" alt="Arrow" class="img-respoansive" /></button>
+      </div>
+    </div>
+  </div>
+  <!-- INDUSTRY MODULE END -->
+
+  <!-- CIRCULAR CARD MODULE START -->
+  <div class="circularCardModule">
+    <div class="siteContainer">
+      <div class="circularCardModule__inner">
+        <div class="circularCard">
+          <h5 class="circularCard__title">Create real value with leading capabilities</h5>
+          <p>Whether you're bringing a new product to life or strategising for a new era of technology, with our
+            extensive capabilities we can help you meet the ever-changing needs of your industry, market and customers.
+          </p>
+          <button class="primaryBtn">Get to know us <img src="arrow.svg" alt="Arrow" class="img-respoansive" /></button>
+        </div>
+        <img class="circularCardModule__img" src="circle-svg.png" alt="pattern Image" />
+        <div class="circularCard">
+          <h5 class="circularCard__title">Create real value with leading capabilities</h5>
+          <p>Whether you're bringing a new product to life or strategising for a new era of technology, with our
+            extensive capabilities we can help you meet the ever-changing needs of your industry, market and customers.
+          </p>
+          <button class="primaryBtn">Get to know us <img src="arrow.svg" alt="Arrow" class="img-respoansive" /></button>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="newsBlock">
+    <div class="siteContainer">
+      <div class="centerheading">
+        <h3 class="centerheading__title">A glimpse into our insights</h3>
+      </div>
+
+      <!-- Custom Navigation Buttons -->
+      <div class="newsNav">
+        <button 
+          class="newsPrev" 
+          id="newsPrev"
+          type="button"
+          aria-label="Previous slide">
+          <img src="left-arrow.svg" alt="" />
+        </button>
+        <button 
+          class="newsNext" 
+          id="newsNext"
+          type="button"
+          aria-label="Next slide">
+          <img src="right-arrow.svg" alt="" />
+        </button>
+      </div>
+
+      <!-- Swiper Container with ViewChild Reference -->
+      <swiper-container
+        #newsSwiper
+        class="newsSwiper"
+        init="false">
+        
+        <!-- Dynamic Slides using *ngFor with trackBy for performance -->
+        <swiper-slide *ngFor="let card of newsCards; trackBy: trackByCardId">
+          <article 
+            class="newsCard" 
+            [attr.aria-label]="card.title">
+            
+            <div class="newsCard__imageWrapper">
+              <!-- Category Badge -->
+              <span class="newsCard__badge">{{ card.category }}</span>
+              <img 
+                [src]="card.image" 
+                [alt]="card.title"
+                class="img-respoansive newsCard__img" 
+                loading="lazy" />
+            </div>
+            
+            <div class="newsCard__info">
+              <h5 class="newsCard__title">{{ card.title }}</h5>
+              
+              <!-- Explore Button -->
+              <button 
+                class="newsCard__exploreBtn"
+                type="button"
+                (click)="exploreNews(card, $event)"
+                aria-label="Explore {{ card.title }}">
+                Explore →
+              </button>
+            </div>
+          </article>
+        </swiper-slide>
+
+      </swiper-container>
+
+      <div class="centerButton">
+        <button class="getToKnowBtn" type="button">
+          Get to know us →
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- TIMELINE MODULE START -->
+  <div class="timelineModule">
+    <div class="siteContainer">
+      <div class="centerheading centerheading--small">
+        <h3 class="centerheading__title">As we use technology to create a positive impact on businesses and people, we
+          build on each of the pillars below.</h3>
+      </div>
+      <div class="timelineModule__inner">
+
+        <div class="timelineModule__item">
+          <div class="timelineModule__item-img"><img src="timeline-img.png" class="img-fluid" alt="Timeline Image" />
+          </div>
+          <div class="timelineModule__item-info">
+            <h6 class="timelineModule__item-title">People-centricity
+            </h6>
+            <p>We strive to create an environment and culture that breeds success by caring for our customers as
+              individuals and empowering our people to be the best they can be.</p>
+          </div>
+        </div>
+        <div class="timelineModule__item">
+          <div class="timelineModule__item-img"><img src="timeline-img.png" class="img-fluid" alt="Timeline Image" />
+          </div>
+          <div class="timelineModule__item-info">
+            <h6 class="timelineModule__item-title">Technology
+            </h6>
+            <p>Our experts leverage the latest technologies to meet diverse customer needs, regardless of industry or
+              scale.</p>
+          </div>
+        </div>
+        <div class="timelineModule__item">
+          <div class="timelineModule__item-img"><img src="timeline-img.png" class="img-fluid" alt="Timeline Image" />
+          </div>
+          <div class="timelineModule__item-info">
+            <h6 class="timelineModule__item-title">Industry expertise
+            </h6>
+            <p>Grasping market trends and dynamics, we tackle specific challenges with tailor-made solutions.</p>
+          </div>
+        </div>
+        <div class="timelineModule__item">
+          <div class="timelineModule__item-img"><img src="timeline-img.png" class="img-fluid" alt="Timeline Image" />
+          </div>
+          <div class="timelineModule__item-info">
+            <h6 class="timelineModule__item-title">Trusted partnerships
+            </h6>
+            <p>We build strong and trusted partnerships with our customers to support them through every step of their
+              journey.</p>
+          </div>
+        </div>
+        <div class="timelineModule__item">
+          <div class="timelineModule__item-img"><img src="timeline-img.png" class="img-fluid" alt="Timeline Image" />
+          </div>
+          <div class="timelineModule__item-info">
+            <h6 class="timelineModule__item-title">People-centricity</h6>
+            <p>As we use technology to create a positive impact on businesses and people, we build on each of the
+              pillars below.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- TIMELINE MODULE END -->
+
+  <!-- LOGO SLIDER START -->
+  <div class="logoSlider">
+    <div class="logoSlider__track">
+      <div class="logoSlide">
+        <img src="hudsonMX.png" class="img-respoansive" alt="" />
+      </div>
+      <div class="logoSlide">
+        <img src="ORf.png" class="img-respoansive" alt="" />
+      </div>
+      <div class="logoSlide">
+        <img src="ekos.png" class="img-respoansive" alt="" />
+      </div>
+      <div class="logoSlide">
+        <img src="ascendant.png" class="img-respoansive" alt="" />
+      </div>
+      <div class="logoSlide">
+        <img src="hudsonMX.png" class="img-respoansive" alt="" />
+      </div>
+      <div class="logoSlide">
+        <img src="ORf.png" class="img-respoansive" alt="" />
+      </div>
+      <div class="logoSlide">
+        <img src="ekos.png" class="img-respoansive" alt="" />
+      </div>
+      <div class="logoSlide">
+        <img src="ascendant.png" class="img-respoansive" alt="" />
+      </div>
+      <div class="logoSlide">
+        <img src="hudsonMX.png" class="img-respoansive" alt="" />
+      </div>
+      <div class="logoSlide">
+        <img src="ORf.png" class="img-respoansive" alt="" />
+      </div>
+      <div class="logoSlide">
+        <img src="ekos.png" class="img-respoansive" alt="" />
+      </div>
+      <div class="logoSlide">
+        <img src="ascendant.png" class="img-respoansive" alt="" />
+      </div>
+      <div class="logoSlide">
+        <img src="hudsonMX.png" class="img-respoansive" alt="" />
+      </div>
+      <div class="logoSlide">
+        <img src="ORf.png" class="img-respoansive" alt="" />
+      </div>
+      <div class="logoSlide">
+        <img src="ekos.png" class="img-respoansive" alt="" />
+      </div>
+      <div class="logoSlide">
+        <img src="ascendant.png" class="img-respoansive" alt="" />
+      </div>
+    </div>
+  </div>
+  <!-- LOGO SLIDER END -->
+
+  <!-- CTA SECTION START -->
+  <div class="ctaSection">
+    <div class="siteContainer">
+      <div class="ctaSection__inner">
+        <h2 class="ctaSection__title">Have a question? Drop us a line!</h2>
+        <p>Combining world-class engineering, industry expertise and a people-centric mindset, we consult and partner
+          with our customers to create technological solutions that drive innovation and transform businesses.</p>
+        <div class="ctaSection__button">
+          <button class="primaryBtn">Let's connect <img src="arrow.svg" alt="Arrow" class="img-respoansive" /></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- CTA SECTION END -->
 </main>
 
 <app-footer></app-footer>

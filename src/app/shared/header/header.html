@@ -1,10 +1,92 @@
-<header>
-  <img *ngIf="config?.image" [src]="config.image" alt="Header image" />
-  <h1>{{ config?.title }}</h1>
+<header class="mainHeader">
+  <a href="" class="mainHeader-logo">
+    <img src="BrainerHubLogo.png" alt="BrainerHubLogo" class="img-responsive" />
+  </a>
 
-  <nav *ngIf="config?.breadcrumbs">
-    <a *ngFor="let crumb of config.breadcrumbs" [routerLink]="crumb.url">
-      {{ crumb.label }}
-    </a>
-  </nav>
+  <div class="mainHeader-actions">
+    <div class="mainHeader-search">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M13.123 11.9654C14.1311 10.7051 14.734 9.10643 14.734 7.36698C14.734 3.29831 11.4356 0 7.36698 0C3.29831 0 0 3.29831 0 7.36698C0 11.4356 3.29831 14.734 7.36698 14.734C9.10643 14.734 10.7051 14.1311 11.9654 13.123L16.6026 17.7603C16.9223 18.0799 17.4406 18.0799 17.7603 17.7603C18.0799 17.4406 18.0799 16.9223 17.7603 16.6026L13.123 11.9654ZM7.36698 13.105C4.19792 13.105 1.62889 10.536 1.62889 7.36698C1.62889 4.19792 4.19792 1.62889 7.36698 1.62889C10.536 1.62889 13.105 4.19792 13.105 7.36698C13.105 10.536 10.536 13.105 7.36698 13.105Z"
+          fill="#D9D9D9" />
+      </svg>
+      <input type="text" name="search" class="mainHeader-search-Box" placeholder="Search" />
+    </div>
+
+    <button class="mainHeader__menuToggle" (click)="drawer.toggle()">
+      <img src="Menu_toogle.svg" alt="Menu Icon" class="img-responsive" />
+    </button>
+  </div>
 </header>
+
+  <mat-drawer #drawer class="menuSidenav" mode="over" position="start" style="color: aliceblue;">
+    <div class="menuSidenav__header">
+      <button class="menuSidenav__menuToggle" (click)="drawer.toggle()">
+        <img src="cross.svg" alt="Close" class="img-responsive" />
+      </button>
+      <button class="primaryBtn">Let's connect</button>
+    </div>
+
+    <mat-nav-list>
+
+  <mat-list-item>Industries</mat-list-item>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>Capabilities</mat-panel-title>
+      <mat-panel-description>
+        <mat-icon>expand_more</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <mat-nav-list>
+      <a mat-list-item>Digital Product Acceleration</a>
+      <a mat-list-item>Advisory & Digital Strategy</a>
+      <a mat-list-item>Leading Delivery</a>
+      <a mat-list-item>Digital Engineering</a>
+      <a mat-list-item>Data & AI</a>
+      <a mat-list-item>Operations & Optimisation</a>
+    </mat-nav-list>
+  </mat-expansion-panel>
+
+  <mat-list-item>Insights</mat-list-item>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>Who We Are</mat-panel-title>
+      <mat-panel-description>
+        <mat-icon>expand_more</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <mat-nav-list>
+      <a mat-list-item>About Us</a>
+      <a mat-list-item>Leadership</a>
+      <a mat-list-item>Culture</a>
+    </mat-nav-list>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>Careers</mat-panel-title>
+      <mat-panel-description>
+        <mat-icon>expand_more</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <mat-nav-list>
+      <a mat-list-item>Open Positions</a>
+      <a mat-list-item>Life at BrainerHub</a>
+    </mat-nav-list>
+  </mat-expansion-panel>
+
+  <mat-list-item>Investors</mat-list-item>
+</mat-nav-list>
+  </mat-drawer>
+
+  
+<!-- 
+  <div class="menuContent">
+    <button class="primaryBtn menuContent__connectBtn">Let's connect</button>
+
+  </div> -->
