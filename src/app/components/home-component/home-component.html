@@ -191,6 +191,56 @@
 
 
 
+ <div class="teamSlider">
+    <div class="siteContainer">
+      <div class="centerheading">
+        <h3 class="centerheading__title">Our people-centric mindset and deep industry expertise</h3>
+        <p>We combine innovative technologies with trusted partnerships to build solutions and create a positive impact on businesses and people.</p>
+      </div>
+
+      <div class="teamNav">
+        <button 
+          class="teamPrev" 
+          id="teamPrev"
+          type="button"
+          aria-label="Previous team member">
+          <img src="left-arrow.svg" alt="" />
+        </button>
+        <button 
+          class="teamNext" 
+          id="teamNext"
+          type="button"
+          aria-label="Next team member">
+          <img src="right-arrow.svg" alt="" />
+        </button>
+      </div>
+
+      <swiper-container
+        #teamSwiper
+        class="teamSwiper"
+        init="false">
+        
+        <swiper-slide *ngFor="let member of teamMembers; trackBy: trackByMemberId">
+          <div class="teamCard">
+            <div class="teamCard__image">
+              <img 
+                [src]="member.image" 
+                [alt]="member.name"
+                class="img-respoansive" 
+                loading="lazy" />
+            </div>
+            <div class="teamCard__overlay">
+              <h5 class="teamCard__name">{{ member.name }}</h5>
+              <p class="teamCard__role">{{ member.role }}</p>
+            </div>
+          </div>
+        </swiper-slide>
+
+      </swiper-container>
+    </div>
+  </div>
+
+
   <!-- TIMELINE MODULE START -->
   <div class="timelineModule">
     <div class="siteContainer">

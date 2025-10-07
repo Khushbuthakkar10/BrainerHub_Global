@@ -22,6 +22,13 @@ interface NewsCard {
   link: string;
 }
 
+interface TeamMember {
+  id: number;
+  name: string;
+  role: string;
+  image: string;
+}
+
 @Component({
   selector: 'app-home-component',
   standalone: true,
@@ -32,6 +39,7 @@ interface NewsCard {
 })
 export class HomeComponent implements AfterViewInit, OnDestroy {
   @ViewChild('newsSwiper', { static: false }) swiperRef!: ElementRef;
+  @ViewChild('teamSwiper', { static: false }) teamSwiperRef!: ElementRef;
 
   newsCards: NewsCard[] = [
     {
@@ -78,7 +86,47 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
     }
   ];
 
+  teamMembers: TeamMember[] = [
+    {
+      id: 1,
+      name: 'Sarah Johnson',
+      role: 'Chief Technology Officer',
+      image: 'deep.png'
+    },
+    {
+      id: 2,
+      name: 'Michael Chen',
+      role: 'Head of Innovation',
+      image: 'deep.png'
+    },
+    {
+      id: 3,
+      name: 'Emily Rodriguez',
+      role: 'Director of Engineering',
+      image: 'deep.png'
+    },
+    {
+      id: 4,
+      name: 'David Kim',
+      role: 'VP of Product',
+      image: 'deep.png'
+    },
+    {
+      id: 5,
+      name: 'Lisa Anderson',
+      role: 'Head of Design',
+      image: 'deep.png'
+    },
+    {
+      id: 6,
+      name: 'James Wilson',
+      role: 'Chief Solutions Architect',
+      image: 'deep.png'
+    }
+  ];
+
   private swiperInitialized = false;
+  private teamSwiperInitialized = false;
   private isBrowser: boolean;
 
   constructor(
@@ -108,11 +156,13 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit(): void {
-    
+    this.initializeSwiper();
+    this.initializeTeamSwiper();
   }
 
   ngOnDestroy(): void {
     this.destroySwiper();
+    this.destroyTeamSwiper();
   }
 
   private initializeSwiper(): void {
@@ -166,6 +216,60 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
     }
   }
 
+  private initializeTeamSwiper(): void {
+    if (!this.isBrowser) return;
+    
+    setTimeout(() => {
+      const swiperEl = this.teamSwiperRef?.nativeElement;
+      
+      if (!swiperEl || this.teamSwiperInitialized) return;
+
+      const swiperParams = {
+        slidesPerView: 3,
+        spaceBetween: 0,
+        centeredSlides: true,
+        loop: true,
+        navigation: {
+          nextEl: '#teamNext',
+          prevEl: '#teamPrev',
+        },
+        pagination: false,
+        grabCursor: true,
+        slideToClickedSlide: true,
+        breakpoints: {
+          0: { 
+            slidesPerView: 1,
+            spaceBetween: 0 
+          },
+          768: { 
+            slidesPerView: 2,
+            spaceBetween: 0 
+          },
+          1024: { 
+            slidesPerView: 3,
+            spaceBetween: 0 
+          }
+        }
+      };
+
+      Object.assign(swiperEl, swiperParams);
+      swiperEl.initialize();
+      this.teamSwiperInitialized = true;
+    }, 0);
+  }
+
+  private destroyTeamSwiper(): void {
+    if (!this.isBrowser) return;
+    
+    if (this.teamSwiperRef?.nativeElement?.swiper) {
+      try {
+        this.teamSwiperRef.nativeElement.swiper.destroy(true, true);
+      } catch (error) {
+        console.error('Error destroying team swiper:', error);
+      }
+    }
+  }
+
   navigateToNews(card: NewsCard, event?: Event): void {
     if (event) {
       event.stopPropagation();
@@ -194,5 +298,9 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
 
   trackByCardId(index: number, card: NewsCard): number {
     return card.id;
+  }
+
+  trackByMemberId(index: number, member: TeamMember): number {
+    return member.id;
   }
 }
