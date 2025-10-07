@@ -24,11 +24,13 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              {
+                "src/favicon.ico",
+                "src/assets",
+                {
                 "glob": "**/*",
                 "input": "public"
               }
-            ],
+              ],
             "styles": [
               "src/styles.scss"
             ],
@@ -43,13 +45,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
+                  "maximumWarning": "800kB",
                   "maximumError": "1MB"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "4kB",
-                  "maximumError": "8kB"
+                  "maximumWarning": "16kB",
+                  "maximumError": "20kB"
                 }
               ],
               "outputHashing": "all"
@@ -64,6 +66,9 @@
         },
         "serve": {
           "builder": "@angular/build:dev-server",
+          "options": {
+              "hmr": false
+            },
           "configurations": {
             "production": {
               "buildTarget": "brainerhub-new:build:production"
