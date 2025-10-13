@@ -1,12 +1,21 @@
-<!-- <footer>
-  <img *ngIf="config?.showImage" [src]="config.imageUrl" alt="Footer image" />
-  <ul>
-    <li *ngFor="let link of config?.links">
-      <a [routerLink]="link.url">{{ link.label }}</a>
-    </li>
-  </ul>
-</footer> -->
-<footer class="mainFooter">
+
+ @if(showCTA){
+   <div class="ctaSection">
+    <div class="siteContainer">
+      <div class="ctaSection__inner">
+        <h2 class="ctaSection__title">Have a question? Drop us a line!</h2>
+        <p>Combining world-class engineering, industry expertise and a people-centric mindset, we consult and partner
+          with our customers to create technological solutions that drive innovation and transform businesses.</p>
+        <div class="ctaSection__button">
+          <button class="primaryBtn">Let's connect <img src="arrow.svg" alt="Arrow" class="img-respoansive" /></button>
+        </div>
+      </div>
+    </div>
+  </div>
+ }
+
+@if(showFooter){
+  <footer class="mainFooter">
   <div class="mainFooter__top">
     <div class="siteContainer">
       <div class="mainFooter__logoBlock">
@@ -81,3 +90,4 @@
     </div>
   </div>
 </footer>
+}

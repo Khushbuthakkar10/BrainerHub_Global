@@ -1,0 +1,36 @@
+
+<div class="breadcrumb-wrapper">
+  <div 
+    *ngIf="hasHeroSection" 
+    class="breadcrumb-hero"
+    [style.background-image]="backgroundImage ? 'url(' + backgroundImage + ')' : 'none'"
+  >
+    <div class="breadcrumb-hero__overlay"></div>
+    <div class="breadcrumb-hero__content">
+      <div *ngIf="logo" class="breadcrumb-hero__logo">
+        <img [src]="logo" [alt]="title || 'Logo'" />
+      </div>
+      
+      <div class="breadcrumb-hero__text">
+        <h1 *ngIf="title" class="breadcrumb-hero__title">{{ title }}</h1>
+        <p *ngIf="subtitle" class="breadcrumb-hero__subtitle">{{ subtitle }}</p>
+      </div>
+    </div>
+  </div>
+
+  <nav class="breadcrumbNav" aria-label="breadcrumb">
+    <ng-container *ngFor="let crumb of breadcrumbs; let last = last">
+      <a
+        *ngIf="crumb.link && !last; else lastCrumb"
+        [routerLink]="crumb.link"
+        class="breadcrumbNav__link"
+      >
+        {{ crumb.label }}
+      </a>
+      <ng-template #lastCrumb>
+        <span class="breadcrumbNav__current">{{ crumb.label }}</span>
+      </ng-template>
+      <mat-icon *ngIf="!last" class="breadcrumbNav__separator">chevron_right</mat-icon>
+    </ng-container>
+  </nav>
+</div>

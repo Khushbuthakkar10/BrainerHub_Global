@@ -91,37 +91,37 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
       id: 1,
       name: 'Sarah Johnson',
       role: 'Chief Technology Officer',
-      image: 'deep.png'
+      image: 'about-img.png',
     },
     {
       id: 2,
       name: 'Michael Chen',
       role: 'Head of Innovation',
-      image: 'deep.png'
+      image: 'about-img.png',
     },
     {
       id: 3,
       name: 'Emily Rodriguez',
       role: 'Director of Engineering',
-      image: 'deep.png'
+      image: 'about-img.png',
     },
     {
       id: 4,
       name: 'David Kim',
       role: 'VP of Product',
-      image: 'deep.png'
+      image: 'about-img.png',
     },
     {
       id: 5,
       name: 'Lisa Anderson',
       role: 'Head of Design',
-      image: 'deep.png'
+      image: 'CTA-img.png',
     },
     {
       id: 6,
       name: 'James Wilson',
       role: 'Chief Solutions Architect',
-      image: 'deep.png'
+      image: 'about-img.png'
     }
   ];
 
@@ -139,20 +139,7 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
 
   ngOnInit(): void {
     this.initializeSwiper();
-    this.layoutService.setHeader({
-      title: 'Welcome to BrainerHub',
-      image: 'assets/images/home-header.png',
-      breadcrumbs: []
-    });
-
-    this.layoutService.setFooter({
-      showImage: true,
-      imageUrl: 'assets/images/footer-home.png',
-      links: [
-        { label: 'Privacy', url: '/privacy' },
-        { label: 'Contact', url: '/contact' }
-      ]
-    });
+    this.layoutService.setLayout({ showCTA: true, showFooter: true });
   }
 
   ngAfterViewInit(): void {
@@ -216,47 +203,54 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
     }
   }
 
-  private initializeTeamSwiper(): void {
-    if (!this.isBrowser) return;
-    
-    setTimeout(() => {
-      const swiperEl = this.teamSwiperRef?.nativeElement;
-      
-      if (!swiperEl || this.teamSwiperInitialized) return;
+private initializeTeamSwiper(): void {
+  if (!this.isBrowser) return;
 
-      const swiperParams = {
-        slidesPerView: 3,
-        spaceBetween: 0,
-        centeredSlides: true,
-        loop: true,
-        navigation: {
-          nextEl: '#teamNext',
-          prevEl: '#teamPrev',
+  setTimeout(() => {
+    const swiperEl = this.teamSwiperRef?.nativeElement;
+    if (!swiperEl || this.teamSwiperInitialized) return;
+
+    const swiperParams = {
+      slidesPerView: 5,              
+      spaceBetween: 0,
+      centeredSlides: true,         
+      loop: true,                   
+      grabCursor: true,
+      slideToClickedSlide: true,     
+      speed: 1000,                  
+      autoplay: {
+        delay: 2000,                 
+        disableOnInteraction: false, 
+      },
+      navigation: {
+        nextEl: '#teamNext',
+        prevEl: '#teamPrev',
+      },
+      pagination: false,
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+          centeredSlides: true,
         },
-        pagination: false,
-        grabCursor: true,
-        slideToClickedSlide: true,
-        breakpoints: {
-          0: { 
-            slidesPerView: 1,
-            spaceBetween: 0 
-          },
-          768: { 
-            slidesPerView: 2,
-            spaceBetween: 0 
-          },
-          1024: { 
-            slidesPerView: 3,
-            spaceBetween: 0 
-          }
-        }
-      };
+        768: {
+          slidesPerView: 2,
+          centeredSlides: true,
+        },
+        1024: {
+          slidesPerView: 3,
+          centeredSlides: true,
+        },
+      },
+    };
 
-      Object.assign(swiperEl, swiperParams);
-      swiperEl.initialize();
-      this.teamSwiperInitialized = true;
-    }, 0);
-  }
+    Object.assign(swiperEl, swiperParams);
+    swiperEl.initialize();
+    this.teamSwiperInitialized = true;
+  }, 0);
+}
+
+
+
 
   private destroyTeamSwiper(): void {
     if (!this.isBrowser) return;

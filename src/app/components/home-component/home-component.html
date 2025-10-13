@@ -1,4 +1,4 @@
-<app-header></app-header>
+<!-- <app-header></app-header> -->
 
 <main class="pageWrapper">
   <!-- HERO BANNER START -->
@@ -118,116 +118,80 @@
       </div>
     </div>
   </div>
-<div class="newsBlock">
+  <!-- CIRCULAR CARD MODULE END -->
+
+  <!-- NEWS BLOCK START -->
+  <div class="newsBlock">
     <div class="siteContainer">
       <div class="centerheading">
         <h3 class="centerheading__title">A glimpse into our insights</h3>
       </div>
 
-      <!-- Custom Navigation Buttons -->
-      <div class="newsNav">
-        <button 
-          class="newsPrev" 
-          id="newsPrev"
-          type="button"
-          aria-label="Previous slide">
-          <img src="left-arrow.svg" alt="" />
-        </button>
-        <button 
-          class="newsNext" 
-          id="newsNext"
-          type="button"
-          aria-label="Next slide">
-          <img src="right-arrow.svg" alt="" />
-        </button>
+      <div class="newsBlock__slider">
+        <div class="newsNav">
+          <button class="newsPrev" id="newsPrev" type="button" aria-label="Previous slide">
+            <img src="left-arrow.svg" alt="Left Arrow" class="img-respoansive" />
+          </button>
+          <button class="newsNext" id="newsNext" type="button" aria-label="Next slide">
+            <img src="right-arrow.svg" alt="Right Arrow" class="img-respoansive" />
+          </button>
+        </div>
+
+        <swiper-container #newsSwiper class="newsSwiper" init="false">
+
+          <!-- Dynamic Slides using *ngFor with trackBy for performance -->
+          <swiper-slide *ngFor="let card of newsCards; trackBy: trackByCardId">
+            <article class="newsCard" [attr.aria-label]="card.title">
+
+              <div class="newsCard__imageWrapper">
+                <!-- Category Badge -->
+                <span class="newsCard__badge">{{ card.category }}</span>
+                <img [src]="card.image" [alt]="card.title" class="img-respoansive newsCard__img" loading="lazy" />
+              </div>
+
+              <div class="newsCard__info">
+                <h5 class="newsCard__title">{{ card.title }}</h5>
+
+                <!-- Explore Button -->
+                <button class="linkBtn" type="button" (click)="exploreNews(card, $event)"
+                  aria-label="Explore {{ card.title }}">
+                  Explore <img src="right-arrow_svg.svg" alt="Arrow" class="img-respoansive" />
+                </button>
+              </div>
+            </article>
+          </swiper-slide>
+
+        </swiper-container>
       </div>
-
-      <!-- Swiper Container with ViewChild Reference -->
-      <swiper-container
-        #newsSwiper
-        class="newsSwiper"
-        init="false">
-        
-        <!-- Dynamic Slides using *ngFor with trackBy for performance -->
-        <swiper-slide *ngFor="let card of newsCards; trackBy: trackByCardId">
-          <article 
-            class="newsCard" 
-            [attr.aria-label]="card.title">
-            
-            <div class="newsCard__imageWrapper">
-              <!-- Category Badge -->
-              <span class="newsCard__badge">{{ card.category }}</span>
-              <img 
-                [src]="card.image" 
-                [alt]="card.title"
-                class="img-respoansive newsCard__img" 
-                loading="lazy" />
-            </div>
-            
-            <div class="newsCard__info">
-              <h5 class="newsCard__title">{{ card.title }}</h5>
-              
-              <!-- Explore Button -->
-              <button 
-                class="newsCard__exploreBtn"
-                type="button"
-                (click)="exploreNews(card, $event)"
-                aria-label="Explore {{ card.title }}">
-                Explore →
-              </button>
-            </div>
-          </article>
-        </swiper-slide>
-
-      </swiper-container>
-
-      <div class="centerButton">
-        <button class="getToKnowBtn" type="button">
-          Get to know us →
+      <div class="newsBlock__button">
+        <button class="primaryBtn" type="button">
+          Get to know us <img src="arrow.svg" alt="Arrow" class="img-respoansive" />
         </button>
       </div>
     </div>
   </div>
+  <!-- NEWS BLOCK END -->
 
+  <!-- TEAM MODULE START -->
+  <div class="teamModule">
 
-
- <div class="teamSlider">
-    <div class="siteContainer">
-      <div class="centerheading">
-        <h3 class="centerheading__title">Our people-centric mindset and deep industry expertise</h3>
-        <p>We combine innovative technologies with trusted partnerships to build solutions and create a positive impact on businesses and people.</p>
-      </div>
-
+<!-- 
       <div class="teamNav">
-        <button 
-          class="teamPrev" 
-          id="teamPrev"
-          type="button"
-          aria-label="Previous team member">
+        <button class="teamPrev" id="teamPrev" type="button" aria-label="Previous team member">
           <img src="left-arrow.svg" alt="" />
         </button>
-        <button 
-          class="teamNext" 
-          id="teamNext"
-          type="button"
-          aria-label="Next team member">
+        <button class="teamNext" id="teamNext" type="button" aria-label="Next team member">
           <img src="right-arrow.svg" alt="" />
         </button>
-      </div>
+      </div> -->
 
-      <swiper-container
-        #teamSwiper
-        class="teamSwiper"
-        init="false">
-        
-        <swiper-slide *ngFor="let member of teamMembers; trackBy: trackByMemberId">
+      <swiper-container #teamSwiper class="teamSwiper" init="false">
+
+        <swiper-slide [loop]="true"  [allowTouchMove]="false"
+			[autoplay]="{ delay: 1000, disableOnInteraction: false }" *ngFor="let member of teamMembers; trackBy: trackByMemberId">
           <div class="teamCard">
             <div class="teamCard__image">
-              <img 
-                [src]="member.image" 
-                [alt]="member.name"
-                class="img-respoansive" 
-                loading="lazy" />
+              <img [src]="member.image" [alt]="member.name" class="img-respoansive" loading="lazy" />
             </div>
             <div class="teamCard__overlay">
               <h5 class="teamCard__name">{{ member.name }}</h5>
@@ -237,9 +201,8 @@
         </swiper-slide>
 
       </swiper-container>
-    </div>
-  </div>
 
+  </div>
 
   <!-- TIMELINE MODULE START -->
   <div class="timelineModule">
@@ -359,7 +322,7 @@
   <!-- LOGO SLIDER END -->
 
   <!-- CTA SECTION START -->
-  <div class="ctaSection">
+  <!-- <div class="ctaSection">
     <div class="siteContainer">
       <div class="ctaSection__inner">
         <h2 class="ctaSection__title">Have a question? Drop us a line!</h2>
@@ -370,8 +333,6 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   <!-- CTA SECTION END -->
 </main>
-
-<app-footer></app-footer>

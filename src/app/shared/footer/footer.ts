@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,Input } from '@angular/core';
 import { LayoutService } from '../../service/layout/layout-service';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -10,11 +10,12 @@ import { CommonModule } from '@angular/common';
   styleUrl: './footer.scss'
 })
 export class Footer {
- config: any;
-
+  @Input() showCTA? = true
+  @Input() showFooter? = true
   constructor(private layoutService: LayoutService) {}
 
   ngOnInit() {
-    this.layoutService.footerConfig$.subscribe(cfg => this.config = cfg);
+    this.layoutService.showCTA$.subscribe(v => this.showCTA = v);
+  this.layoutService.showFooter$.subscribe(v => this.showFooter = v);
   }
 }

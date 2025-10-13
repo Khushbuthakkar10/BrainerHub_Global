@@ -5,17 +5,11 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class LayoutService {
-   private headerConfig = new BehaviorSubject<any>(null);
-  headerConfig$ = this.headerConfig.asObservable();
+   showCTA$ = new BehaviorSubject<boolean>(true);
+  showFooter$ = new BehaviorSubject<boolean>(true);
 
-  private footerConfig = new BehaviorSubject<any>(null);
-  footerConfig$ = this.footerConfig.asObservable();
-
-  setHeader(config: any) {
-    this.headerConfig.next(config);
-  }
-
-  setFooter(config: any) {
-    this.footerConfig.next(config);
+  setLayout(options: { showCTA?: boolean; showFooter?: boolean }) {
+    if (options.showCTA !== undefined) this.showCTA$.next(options.showCTA);
+    if (options.showFooter !== undefined) this.showFooter$.next(options.showFooter);
   }
 }

@@ -438,10 +438,11 @@
             left: 50%;
             top: 0;
             transform: translateX(-50%);
-             @media only screen and (max-width: 767px) {
+
+            @media only screen and (max-width: 767px) {
                 transform: none;
                 left: 12px;
-             }
+            }
         }
     }
 
@@ -453,6 +454,7 @@
         position: relative;
         z-index: 2;
         flex-direction: row-reverse;
+
         @media only screen and (max-width: 767px) {
             flex-direction: row;
             width: 100%;
@@ -465,6 +467,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+
             @media only screen and (max-width: 767px) {
                 left: 12px;
             }
@@ -478,9 +481,10 @@
                 position: absolute;
                 border-radius: 50%;
                 background: #192B37;
+
                 @media only screen and (max-width: 767px) {
                     height: 75px;
-                width: 75px;
+                    width: 75px;
                 }
             }
 
@@ -494,11 +498,12 @@
                 left: auto;
                 background: #192B37;
                 z-index: 1;
+
                 @media only screen and (max-width: 767px) {
                     left: 3px;
-                right: auto;
-                 height: 90px;
-                width: 70px;
+                    right: auto;
+                    height: 90px;
+                    width: 70px;
                 }
             }
 
@@ -508,10 +513,11 @@
                 min-width: 100px;
                 position: relative;
                 z-index: 3;
+
                 @media only screen and (max-width: 767px) {
                     height: 60px;
-                width: 60px;
-                 min-width: 60px;
+                    width: 60px;
+                    min-width: 60px;
                 }
 
             }
@@ -524,10 +530,11 @@
             position: relative;
             z-index: 2;
             margin-right: -10px;
-              @media only screen and (max-width: 767px) {
+
+            @media only screen and (max-width: 767px) {
                 margin-left: 0;
                 margin-right: 0;
-              }
+            }
 
             p {
                 font-size: 16px;
@@ -559,6 +566,7 @@
             margin-left: auto;
             margin-right: 0;
             flex-direction: row;
+
             @media only screen and (max-width: 767px) {
                 margin-left: 0;
             }
@@ -567,110 +575,25 @@
             .timelineModule__item-img::before {
                 left: 14px;
                 right: auto;
+
                 @media only screen and (max-width: 767px) {
                     left: 3px;
-                right: auto;
+                    right: auto;
                 }
             }
 
             .timelineModule__item-info {
                 margin-left: -10px;
                 margin-right: 0;
+
                 @media only screen and (max-width: 767px) {
-                     margin-left: 0px;
+                    margin-left: 0px;
                 }
             }
         }
     }
 }
 
-.ctaSection {
-    background-image: url('../../../../public/CTA-img.png');
-    background-size: cover;
-    background-position: center;
-    padding: 110px 0;
-    position: relative;
-    background-attachment: fixed;
-
-    @media only screen and (max-width: 991px) {
-        padding: 80px 0;
-    }
-
-    &::after {
-        content: '';
-        height: 100%;
-        width: 100%;
-        display: block;
-        position: absolute;
-        left: 0;
-        top: 0;
-        background: #000;
-        opacity: 35%;
-    }
-
-    &__inner {
-        text-align: center;
-        position: relative;
-        z-index: 1;
-
-        p {
-            font-size: 16px;
-            color: #eee;
-            line-height: 24px;
-            max-width: 900px;
-            width: 100%;
-            margin: 22px auto 0;
-
-            @media only screen and (max-width: 991px) {
-                font-size: 14px;
-                line-height: 20px;
-            }
-        }
-    }
-
-    &__title {
-        font-size: 62px;
-        color: #FFFFFF;
-        line-height: 75px;
-        font-weight: 700;
-        position: relative;
-        font-family: "Open Sans", sans-serif;
-
-        @media only screen and (max-width: 991px) {
-            font-size: 50px;
-            line-height: 60px;
-        }
-
-        @media only screen and (max-width: 767px) {
-            font-size: 42px;
-            line-height: 52px;
-        }
-
-        &::after {
-            content: '';
-            height: 4px;
-            width: 90px;
-            display: block;
-            background: #842013;
-            background: linear-gradient(49deg, rgba(132, 32, 19, 1) 0%, rgba(255, 86, 64, 1) 100%);
-            border-radius: 5px;
-            margin: 15px auto 0;
-        }
-    }
-
-    &__button {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 12px;
-        flex-wrap: wrap;
-        margin-top: 60px;
-
-        @media only screen and (max-width: 991px) {
-            margin-top: 40px;
-        }
-    }
-}
 
 
 .logoSlider {
@@ -681,9 +604,10 @@
     overflow: hidden;
     position: relative;
     width: 100%;
-      @media only screen and (max-width: 991px) {
+
+    @media only screen and (max-width: 991px) {
         padding: 20px 0;
-      }
+    }
 
 
     &__track {
@@ -691,9 +615,10 @@
         display: flex;
         width: calc(250px * 14);
         gap: 150px;
-         @media only screen and (max-width: 991px) {
-        gap: 100px;
-      }
+
+        @media only screen and (max-width: 991px) {
+            gap: 100px;
+        }
     }
 
     .logoSlide {
@@ -704,20 +629,24 @@
         justify-content: center;
         position: relative;
         min-width: 180px;
-           @media only screen and (max-width: 991px) {
+
+        @media only screen and (max-width: 991px) {
             height: 120px;
-        width: 120px;
-        min-width: 120px;
-           }
+            width: 120px;
+            min-width: 120px;
+        }
+
         img {
             object-fit: contain;
             height: 180px;
             width: 180px;
-             @media only screen and (max-width: 991px) {
-            height: 120px;
-        width: 120px;
-           }
+
+            @media only screen and (max-width: 991px) {
+                height: 120px;
+                width: 120px;
+            }
         }
+
         &::after {
             content: '';
             height: 18px;
@@ -727,283 +656,414 @@
             background-size: contain;
             background-repeat: no-repeat;
             right: -100px;
+
             @media only screen and (max-width: 991px) {
                 height: 15px;
-            width: 32px;
-            right: -66px;
+                width: 32px;
+                right: -66px;
             }
         }
     }
 }
 
 .newsBlock {
-     margin: 100px 0;
+    margin: 100px 0;
     position: relative;
 
     @media only screen and (max-width: 991px) {
         margin: 80px 0;
     }
-    &__inner {
+
+    &__slider {
+        // display: flex;
+        // align-items: center;
+        // gap: 20px;
+        position: relative;
+        padding: 0 15px;
+        @media only screen and (max-width: 991px) {
+            padding: 0 8px;
+        }
+
+        .newsNav {
+            button {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                height: 50px;
+                width: 50px;
+                border: none;
+                background: transparent;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0;
+                z-index: 2;
+                @media only screen and (max-width: 991px) {
+                     height: 35px;
+                width: 35px;
+                }
+
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: contain;
+                }
+            }
+
+            .newsPrev {
+                left: -14px;
+                @media only screen and (max-width: 991px) {
+                   left: -10px;
+                }
+            }
+
+            .newsNext {
+                right: -14px;
+                @media only screen and (max-width: 991px) {
+                   right: -10px;
+                }
+            }
+        }
+
+    }
+
+    &__button {
+        text-align: center;
+        margin-top: 60px;
         display: flex;
         align-items: center;
-        gap: 20px;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+
+        @media only screen and (max-width: 991px) {
+            margin-top: 40px;
+        }
     }
 }
+
 .newsCard {
     border-radius: 20px;
     border: 1px solid #47555F;
-}
+    background: #192B37;
+    overflow: hidden;
+    position: relative;
 
+    &__imageWrapper {
+        display: flex;
+    }
 
-// TEAM SLIDER STYLES
-.teamSlider {
-  padding: 80px 0;
-  background: linear-gradient(180deg, #0a2540 0%, #1a3a5a 100%);
-  position: relative;
-  overflow: hidden;
+    &__badge {
+        position: absolute;
+        padding: 12px 55px;
+        border-radius: 0 25px 25px 0;
+        font-size: 16px;
+        line-height: 24px;
+        color: #fff;
+        font-weight: 700;
+        background: #842013;
+        background: linear-gradient(49deg, rgb(132, 32, 19) 0%, rgb(255, 86, 64) 100%);
+        z-index: 1;
+        left: -100%;
+        top: 24px;
+        @media only screen and (max-width: 991px) {
+            padding: 10px 40px;
+        }
+    }
 
-  .centerheading {
-    margin-bottom: 60px;
-    
+    &__info {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        left: 0;
+        width: 100%;
+        background: #192b3780;
+        background: linear-gradient(0deg, #192b3780 49%, #192b3780 100%);
+        padding: 20px 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+
     &__title {
-      color: #ffffff;
-      max-width: 800px;
-      margin: 0 auto 20px;
+        font-size: 34px;
+        line-height: 44px;
+        color: #FFFFFF;
+        font-weight: 700;
+        font-family: "Open Sans", sans-serif;
+        @media only screen and (max-width: 991px) {
+                    font-size: 26px;
+        line-height: 36px;
+        }
     }
 
-    p {
-      color: rgba(255, 255, 255, 0.8);
-      max-width: 700px;
-      margin: 0 auto;
+    &__img {
+        height: 100%;
+        object-fit: cover;
     }
-  }
-}
 
-.teamNav {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  margin-bottom: 50px;
-  position: relative;
-  z-index: 10;
-
-  button {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    .linkBtn {
+        opacity: 0;
+    }
 
     &:hover {
-      background: rgba(255, 255, 255, 0.2);
-      border-color: rgba(255, 255, 255, 0.5);
-      transform: scale(1.05);
-    }
+        .newsCard__info {
+            background: #000000;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 1) 49%, rgba(0, 0, 0, 0) 100%);
+        }
 
-    img {
-      width: 20px;
-      height: 20px;
-      filter: brightness(0) invert(1);
+        .newsCard__badge {
+            left: 0;
+        }
+
+        .linkBtn {
+            opacity: 100%;
+        }
     }
-  }
 }
 
+// TEAM SLIDER STYLES
+.teamModule {
+    padding: 100px 0;
+    background: #1A3242;
+    border-top: 1px solid #47555F;
+    border-bottom: 1px solid #47555F;
+    position: relative;
+    overflow: hidden;
+    @media only screen and (max-width: 991px) {
+        margin: 80px 0;
+    }
+}
+
+// .teamNav {
+//     display: flex;
+//     gap: 16px;
+//     justify-content: center;
+//     margin-bottom: 50px;
+//     position: relative;
+//     z-index: 10;
+
+//     button {
+//         width: 48px;
+//         height: 48px;
+//         border-radius: 50%;
+//         border: 2px solid rgba(255, 255, 255, 0.3);
+//         background: rgba(255, 255, 255, 0.1);
+//         backdrop-filter: blur(10px);
+//         display: flex;
+//         align-items: center;
+//         justify-content: center;
+//         cursor: pointer;
+//         transition: all 0.3s ease;
+
+//         &:hover {
+//             background: rgba(255, 255, 255, 0.2);
+//             border-color: rgba(255, 255, 255, 0.5);
+//             transform: scale(1.05);
+//         }
+
+//         img {
+//             width: 20px;
+//             height: 20px;
+//             filter: brightness(0) invert(1);
+//         }
+//     }
+// }
+
 .teamSwiper {
-  padding: 40px 0 60px;
-  overflow: visible;
+    overflow: visible;
 
-  swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    opacity: 0.4;
-    transform: scale(0.85);
-    z-index: 1;
+    swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1;
+        filter: blur(6px);
+        //  opacity: 0.6;
+            transform: scale(0.8);
+            z-index: 2;
 
-    &.swiper-slide-active {
-      opacity: 1;
-      transform: scale(1);
-      z-index: 3;
+        &.swiper-slide-active {
+            opacity: 1;
+            transform: scale(1);
+            z-index: 3;
+            filter: blur(0);
+            .teamCard__image::after {
+                opacity: 0 !important;
+            }
+        }
 
-      .teamCard {
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-        border-color: rgba(255, 255, 255, 0.3);
-      }
+        &.swiper-slide-prev,
+        &.swiper-slide-next {
+           
+        }
+        &:nth-child(even) {
+            .teamCard {
+                flex-direction: column-reverse;
+            }
+        }
     }
-
-    &.swiper-slide-prev,
-    &.swiper-slide-next {
-      opacity: 0.6;
-      transform: scale(0.9);
-      z-index: 2;
-    }
-  }
 }
 
 .teamCard {
-  width: 100%;
-  max-width: 400px;
-  aspect-ratio: 3/4;
-  position: relative;
-  border-radius: 16px;
-  overflow: hidden;
-  border: 2px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.4s ease;
-  cursor: pointer;
-
-  &__image {
     width: 100%;
-    height: 100%;
+    aspect-ratio: 3/4.5;
     position: relative;
+    border-radius: 16px;
     overflow: hidden;
+    transition: all 0.4s ease;
+    cursor: pointer;
+        display: flex;
+    flex-direction: column;
+    gap: 20px;
+     @media only screen and (max-width: 991px) {
+        gap: 12px;
+     }
 
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s ease;
+    &__image {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            opacity: 0.5;
+            background: #000000;
+            transition: opacity 0.4s ease;
+        }
     }
 
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 70%;
-      background: linear-gradient(
-        to top,
-        rgba(10, 37, 64, 0.95) 0%,
-        rgba(10, 37, 64, 0.7) 40%,
-        transparent 100%
-      );
-      transition: opacity 0.4s ease;
-    }
-  }
-
-  &__overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 32px 24px;
-    z-index: 2;
-    text-align: center;
-    transform: translateY(0);
-    transition: transform 0.4s ease;
-  }
-
-  &__name {
-    font-size: 24px;
-    font-weight: 700;
-    color: #ffffff;
-    margin: 0 0 8px;
-    line-height: 1.3;
-  }
-
-  &__role {
-    font-size: 16px;
-    color: rgba(255, 255, 255, 0.85);
-    margin: 0;
-    font-weight: 400;
-  }
-
-  &:hover {
-    .teamCard__image img {
-      transform: scale(1.05);
+    &__overlay {
+        z-index: 2;
+        text-align: center;
+        transition: transform 0.4s ease;
     }
 
-    .teamCard__image::after {
-      opacity: 0.9;
+    &__name {
+        font-size: 28px;
+        line-height: 36px;
+        font-weight: 700;
+        color: #ffffff;
+        margin: 0 0 4px;
+         font-family: "Open Sans", sans-serif;
+         @media only screen and (max-width: 991px) {
+             font-size: 22px;
+        line-height: 28px;
+        margin: 0;
+         }
     }
-  }
+
+    &__role {
+        font-size: 16px;
+        line-height: 24px;
+        color: rgba(255, 255, 255, 0.85);
+        margin: 0;
+        font-weight: 400;
+         @media only screen and (max-width: 991px) {
+             font-size: 14px;
+        line-height: 20px;
+         }
+    }
+
+    &:hover {
+        .teamCard__image img {
+            transform: scale(1.05);
+        }
+    }
 }
 
 // Responsive styles
-@media (max-width: 1024px) {
-  .teamSlider {
-    padding: 60px 0;
-  }
+// @media (max-width: 1024px) {
 
-  .teamCard {
-    max-width: 350px;
 
-    &__name {
-      font-size: 22px;
-    }
+//     .teamCard {
+//         max-width: 350px;
 
-    &__role {
-      font-size: 15px;
-    }
-  }
-}
+//         &__name {
+//             font-size: 22px;
+//         }
 
-@media (max-width: 768px) {
-  .teamSlider {
-    padding: 50px 0;
-  }
+//         &__role {
+//             font-size: 15px;
+//         }
+//     }
+// }
 
-  .teamNav {
-    margin-bottom: 40px;
+// @media (max-width: 768px) {
+//     .teamModule {
+//         padding: 50px 0;
+//     }
 
-    button {
-      width: 44px;
-      height: 44px;
-    }
-  }
+//     .teamNav {
+//         margin-bottom: 40px;
 
-  .teamSwiper {
-    padding: 30px 0 50px;
+//         button {
+//             width: 44px;
+//             height: 44px;
+//         }
+//     }
 
-    swiper-slide {
-      opacity: 0.3;
-      transform: scale(0.8);
+//     .teamSwiper {
+//         padding: 30px 0 50px;
 
-      &.swiper-slide-active {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-  }
+//         swiper-slide {
+//             opacity: 0.3;
+//             transform: scale(0.8);
 
-  .teamCard {
-    max-width: 300px;
+//             &.swiper-slide-active {
+//                 opacity: 1;
+//                 transform: scale(1);
+//             }
+//         }
+//     }
 
-    &__overlay {
-      padding: 24px 20px;
-    }
+//     .teamCard {
+//         max-width: 300px;
 
-    &__name {
-      font-size: 20px;
-    }
+//         &__overlay {
+//             padding: 24px 20px;
+//         }
 
-    &__role {
-      font-size: 14px;
-    }
-  }
-}
+//         &__name {
+//             font-size: 20px;
+//         }
 
-@media (max-width: 480px) {
-  .teamSlider {
-    padding: 40px 0;
-  }
+//         &__role {
+//             font-size: 14px;
+//         }
+//     }
+// }
 
-  .teamCard {
-    max-width: 280px;
+// @media (max-width: 480px) {
+//     .teamModule {
+//         padding: 40px 0;
+//     }
 
-    &__name {
-      font-size: 18px;
-    }
+//     .teamCard {
+//         max-width: 280px;
 
-    &__role {
-      font-size: 13px;
-    }
-  }
-}
+//         &__name {
+//             font-size: 18px;
+//         }
+
+//         &__role {
+//             font-size: 13px;
+//         }
+//     }
+// }

@@ -42,6 +42,13 @@ button {
   text-decoration: none;
 }
 
+input:hover, button:hover, textarea:hover, select:hover,
+input:focus, button:focus, textarea:focus, select:focus,
+input:focus-visible, button:focus-visible, textarea:focus-visible, select:focus-visible,
+input:focus-within, button:focus-within, textarea:focus-within, select:focus-within {
+  outline: none;
+}
+
 ul {
   margin: 0;
   padding: 0;
@@ -53,6 +60,94 @@ ul {
   padding: 0 20px;
   width: 100%;
   margin: 0 auto;
+}
+
+.ctaSection {
+    background-image: url('../src/assets/images/CTA-img.png');
+    background-size: cover;
+    background-position: center;
+    padding: 110px 0;
+    position: relative;
+    background-attachment: fixed;
+
+    @media only screen and (max-width: 991px) {
+        padding: 80px 0;
+    }
+
+    &::after {
+        content: '';
+        height: 100%;
+        width: 100%;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: #000;
+        opacity: 35%;
+    }
+
+    &__inner {
+        text-align: center;
+        position: relative;
+        z-index: 1;
+
+        p {
+            font-size: 16px;
+            color: #eee;
+            line-height: 24px;
+            max-width: 900px;
+            width: 100%;
+            margin: 22px auto 0;
+
+            @media only screen and (max-width: 991px) {
+                font-size: 14px;
+                line-height: 20px;
+            }
+        }
+    }
+
+    &__title {
+        font-size: 62px;
+        color: #FFFFFF;
+        line-height: 75px;
+        font-weight: 700;
+        position: relative;
+        font-family: "Open Sans", sans-serif;
+
+        @media only screen and (max-width: 991px) {
+            font-size: 50px;
+            line-height: 60px;
+        }
+
+        @media only screen and (max-width: 767px) {
+            font-size: 42px;
+            line-height: 52px;
+        }
+
+        &::after {
+            content: '';
+            height: 4px;
+            width: 90px;
+            display: block;
+            background: #842013;
+            background: linear-gradient(49deg, rgba(132, 32, 19, 1) 0%, rgba(255, 86, 64, 1) 100%);
+            border-radius: 5px;
+            margin: 15px auto 0;
+        }
+    }
+
+    &__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 60px;
+
+        @media only screen and (max-width: 991px) {
+            margin-top: 40px;
+        }
+    }
 }
 
 .pageWrapper {
@@ -98,6 +193,18 @@ ul {
   justify-content: center;
   gap: 8px;
   text-align: center;
+}
+
+.linkBtn {
+  font-size: 16px;
+  line-height: 24px;
+  color: #fff;
+  font-weight: 700;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 // HEADING CSS
