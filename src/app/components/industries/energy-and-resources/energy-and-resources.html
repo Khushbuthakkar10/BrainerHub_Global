@@ -1,2 +1,78 @@
 <app-breadcrumb [config]="breadcrumbConfig"></app-breadcrumb>
 
+<mat-accordion multi="false" style="color: white;">
+
+  <mat-expansion-panel #panel1>
+    <mat-expansion-panel-header>
+      <span>Solution development</span>
+      <mat-icon *ngIf="!panel1.expanded">add</mat-icon>
+      <mat-icon *ngIf="panel1.expanded">remove</mat-icon>
+    </mat-expansion-panel-header>
+
+    <p>We help you develop next-generation solutions that strengthen energy initiatives.</p>
+    <ol>
+      <li>Modernisation and integration</li>
+      <li>Electrification and mobility</li>
+      <li>Renewables</li>
+      <li>IT/OT convergence</li>
+      <li>Smart communities and customer empowerment</li>
+    </ol>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel #panel2>
+    <mat-expansion-panel-header>
+      <span>Solution development</span>
+      <mat-icon *ngIf="!panel2.expanded">add</mat-icon>
+      <mat-icon *ngIf="panel2.expanded">remove</mat-icon>
+    </mat-expansion-panel-header>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel #panel3>
+    <mat-expansion-panel-header>
+      <span>Solution development</span>
+      <mat-icon *ngIf="!panel3.expanded">add</mat-icon>
+      <mat-icon *ngIf="panel3.expanded">remove</mat-icon>
+    </mat-expansion-panel-header>
+  </mat-expansion-panel>
+
+</mat-accordion>
+
+
+
+<section style="color: white;">
+  <h2>Testimonials</h2>
+
+  <div>
+    <button id="testimonialsPrev" type="button" aria-label="Previous testimonial">PREV</button>
+    <button id="testimonialsNext" type="button" aria-label="Next testimonial">NEXT</button>
+  </div>
+
+  <swiper-container #testimonialsSwiper init="false">
+    <swiper-slide *ngFor="let testimonial of testimonials; trackBy: trackByTestimonialId">
+      <div>
+        <div>
+          <img [src]="testimonial.image" [alt]="testimonial.name">
+        </div>
+
+        <div>
+          <div>“</div>
+
+          <div>
+            <strong>{{ testimonial.name }}</strong>
+            <span>({{ testimonial.name }})</span>
+          </div>
+
+          <h3>{{ testimonial.designation }}, {{ testimonial.company }}</h3>
+
+          <div>
+            <span *ngFor="let filled of getStarArray(testimonial.rating)">
+              {{ filled ? '★' : '☆' }}
+            </span>
+          </div>
+
+          <p>{{ testimonial.quote }}</p>
+        </div>
+      </div>
+    </swiper-slide>
+  </swiper-container>
+</section>
