@@ -1,78 +1,257 @@
 <app-breadcrumb [config]="breadcrumbConfig"></app-breadcrumb>
 
-<mat-accordion multi="false" style="color: white;">
+<!-- COUNTER SECTION START -->
+<div class="counterSection">
+  <div class="siteContainer">
+    <div class="centerheading">
+      <h3 class="centerheading__title">Building solutions for the future</h3>
+      <p>From carbon net-zero and electrification to the convergence of information and operational technology
+        (IT/OT), the energy and resources sector faces a rapidly evolving landscape. Innovation will be the
+        catalyst for new solutions and efficiencies to meet the rapidly changing needs of customers, governments
+        and an increasingly smart society. With our 20+ years as a global provider of digital transformation,
+        agile development and intelligent automation, we’re your partner in meeting the opportunities and
+        challenges and helping to deliver lasting benefits. We work in all areas of energy and resources from
+        mining, oil and gas, to engineering, power and utilities. Our clients range from start-up energy storage
+        companies to the world’s largest metals and mining corporations and everything in between.</p>
+    </div>
+    <div class="counterSection__inner">
+      <div class="counterCard">
+        <img src="user-circle.svg" alt="User icon" class="img-responsive counterCard__img" />
+        <h6 class="counterCard__title">Delivery countries</h6>
+        <div class="counterCard__no">54 <img src="plus-symbol-brush-stroke.svg" alt="plus icon"
+            class="img-responsive" /></div>
+      </div>
+      <div class="counterCard">
+        <img src="user-circle.svg" alt="User icon" class="img-responsive counterCard__img" />
+        <h6 class="counterCard__title">Years experience in smart energy</h6>
+        <div class="counterCard__no">15 <img src="plus-symbol-brush-stroke.svg" alt="plus icon"
+            class="img-responsive" /></div>
+      </div>
+      <div class="counterCard">
+        <img src="user-circle.svg" alt="User icon" class="img-responsive counterCard__img" />
+        <h6 class="counterCard__title">NPS Score</h6>
+        <div class="counterCard__no">50 <img src="plus-symbol-brush-stroke.svg" alt="plus icon"
+            class="img-responsive" /></div>
+      </div>
+      <div class="counterCard">
+        <img src="user-circle.svg" alt="User icon" class="img-responsive counterCard__img" />
+        <h6 class="counterCard__title">IT experts for individual customers</h6>
+        <div class="counterCard__no">150 <img src="plus-symbol-brush-stroke.svg" alt="plus icon"
+            class="img-responsive" /></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- COUNTER SECTION END -->
 
-  <mat-expansion-panel #panel1>
-    <mat-expansion-panel-header>
-      <span>Solution development</span>
-      <mat-icon *ngIf="!panel1.expanded">add</mat-icon>
-      <mat-icon *ngIf="panel1.expanded">remove</mat-icon>
-    </mat-expansion-panel-header>
+<!-- FAQ SECTION START -->
+<div class="faqSection">
+  <div class="siteContainer">
+    <div class="centerheading">
+      <h3 class="centerheading__title">What can we do for you?</h3>
+    </div>
+    <mat-accordion multi="false" class="faqSection__accordion">
+      <mat-expansion-panel #panel1>
+        <mat-expansion-panel-header>
+          Solution development
+          <!-- <mat-icon *ngIf="!panel1.expanded">add</mat-icon>
+          <mat-icon *ngIf="panel1.expanded">remove</mat-icon> -->
+        </mat-expansion-panel-header>
+        <p>We help you develop next-generation solutions that strengthen energy initiatives.</p>
+        <ol>
+          <li>Modernisation and integration</li>
+          <li>Electrification and mobility</li>
+          <li>Renewables</li>
+          <li>IT/OT convergence</li>
+          <li>Smart communities and customer empowerment</li>
+        </ol>
+      </mat-expansion-panel>
 
-    <p>We help you develop next-generation solutions that strengthen energy initiatives.</p>
-    <ol>
-      <li>Modernisation and integration</li>
-      <li>Electrification and mobility</li>
-      <li>Renewables</li>
-      <li>IT/OT convergence</li>
-      <li>Smart communities and customer empowerment</li>
-    </ol>
-  </mat-expansion-panel>
+      <mat-expansion-panel #panel2>
+        <mat-expansion-panel-header>
+          Solution development
+        </mat-expansion-panel-header>
+        <p>We help you develop next-generation solutions that strengthen energy initiatives.</p>
+        <ol>
+          <li>Modernisation and integration</li>
+          <li>Electrification and mobility</li>
+          <li>Renewables</li>
+          <li>IT/OT convergence</li>
+          <li>Smart communities and customer empowerment</li>
+        </ol>
+      </mat-expansion-panel>
 
-  <mat-expansion-panel #panel2>
-    <mat-expansion-panel-header>
-      <span>Solution development</span>
-      <mat-icon *ngIf="!panel2.expanded">add</mat-icon>
-      <mat-icon *ngIf="panel2.expanded">remove</mat-icon>
-    </mat-expansion-panel-header>
-  </mat-expansion-panel>
+      <mat-expansion-panel #panel3>
+        <mat-expansion-panel-header>
+          Solution development
+        </mat-expansion-panel-header>
+        <p>We help you develop next-generation solutions that strengthen energy initiatives.</p>
+        <ol>
+          <li>Modernisation and integration</li>
+          <li>Electrification and mobility</li>
+          <li>Renewables</li>
+          <li>IT/OT convergence</li>
+          <li>Smart communities and customer empowerment</li>
+        </ol>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</div>
+<!-- FAQ SECTION END -->
 
-  <mat-expansion-panel #panel3>
-    <mat-expansion-panel-header>
-      <span>Solution development</span>
-      <mat-icon *ngIf="!panel3.expanded">add</mat-icon>
-      <mat-icon *ngIf="panel3.expanded">remove</mat-icon>
-    </mat-expansion-panel-header>
-  </mat-expansion-panel>
+<!-- CASE STUDY SECTION START -->
+<div class="caseStudySection">
+  <div class="siteContainer">
+    <div class="centerheading">
+      <h3 class="centerheading__title">See our work in action</h3>
+    </div>
+    <div class="caseStudySection__inner">
+      <div class="caseStudyCard">
+        <div class="caseStudyCard__image">
+          <span class="caseStudyCard__badge">Case study</span>
+          <img src="CaseStudyImage.png" alt="Case study Image" class="img-responsive caseStudyCard__img"
+            loading="lazy" />
+        </div>
+        <div class="caseStudyCard__content">
+          <h5 class="caseStudyCard__title">Stem, Inc. Improves Energy Optimisation Using Predictive AI</h5>
+          <p>Stem Inc. needed a programme that would predict the most cost-effective moment to buy
+            electricity. Together, we delivered a solution for forecasting electricity demand.</p>
+          <button class="linkBtn" type="button">
+            Read More <img src="arrow.svg" alt="Arrow" class="img-responsive" />
+          </button>
+        </div>
+      </div>
+      <div class="caseStudyCard">
+        <div class="caseStudyCard__image">
+          <span class="caseStudyCard__badge">Case study</span>
+          <img src="CaseStudyImage.png" alt="Case study Image" class="img-responsive caseStudyCard__img"
+            loading="lazy" />
+        </div>
+        <div class="caseStudyCard__content">
+          <h5 class="caseStudyCard__title">Stem, Inc. Improves Energy Optimisation Using Predictive AI</h5>
+          <p>Stem Inc. needed a programme that would predict the most cost-effective moment to buy
+            electricity. Together, we delivered a solution for forecasting electricity demand.</p>
+          <button class="linkBtn" type="button">
+            Read More <img src="arrow.svg" alt="Arrow" class="img-responsive" />
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="caseStudySection__button">
+      <button class="primaryBtn">Explore more case studies <img src="arrow.svg" alt="Arrow"
+          class="img-responsive" /></button>
+    </div>
+  </div>
+</div>
+<!-- CASE STUDY SECTION END -->
 
-</mat-accordion>
+<!-- ARTICLE BLOCK START -->
+<div class="articleBlock">
+  <div class="siteContainer">
+    <div class="centerheading">
+      <h3 class="centerheading__title">See our work in action</h3>
+    </div>
+    <div class="articleBlock__inner">
+      <div class="articleCard">
+        <div class="articleCard__image">
+          <img src="CaseStudyImage.png" alt="Case study Image" class="img-responsive articleCard__img" loading="lazy" />
+        </div>
+        <div class="articleCard__content">
+          <h5 class="articleCard__title">5 Questions in Smart Energy That Will Define the Net Zero Transition</h5>
+          <p>Distributed energy resources and smarter grids could be the key to a greener future. Let's investigate
+            the
+            technologies making a cleaner, greener energy supply a reality.</p>
+          <button class="linkBtn" type="button">
+            Read the article <img src="dark-rightArrow.svg" alt="Arrow" class="img-responsive" />
+          </button>
+        </div>
+      </div>
+      <div class="articleCard">
+        <div class="articleCard__image">
+          <img src="CaseStudyImage.png" alt="Case study Image" class="img-responsive articleCard__img" loading="lazy" />
+        </div>
+        <div class="articleCard__content">
+          <h5 class="articleCard__title">5 Questions in Smart Energy That Will Define the Net Zero Transition</h5>
+          <p>Distributed energy resources and smarter grids could be the key to a greener future. Let's investigate
+            the
+            technologies making a cleaner, greener energy supply a reality.</p>
+          <button class="linkBtn" type="button">
+            Read the article <img src="dark-rightArrow.svg" alt="Arrow" class="img-responsive" />
+          </button>
+        </div>
+      </div>
+      <div class="articleCard">
+        <div class="articleCard__image">
+          <img src="CaseStudyImage.png" alt="Case study Image" class="img-responsive articleCard__img" loading="lazy" />
+        </div>
+        <div class="articleCard__content">
+          <h5 class="articleCard__title">5 Questions in Smart Energy That Will Define the Net Zero Transition</h5>
+          <p>Distributed energy resources and smarter grids could be the key to a greener future. Let's investigate
+            the
+            technologies making a cleaner, greener energy supply a reality.</p>
+          <button class="linkBtn" type="button">
+            Read the article <img src="dark-rightArrow.svg" alt="Arrow" class="img-responsive" />
+          </button>
+        </div>
+      </div>
+      <div class="articleCard">
+        <div class="articleCard__image">
+          <img src="CaseStudyImage.png" alt="Case study Image" class="img-responsive articleCard__img" loading="lazy" />
+        </div>
+        <div class="articleCard__content">
+          <h5 class="articleCard__title">5 Questions in Smart Energy That Will Define the Net Zero Transition</h5>
+          <p>Distributed energy resources and smarter grids could be the key to a greener future. Let's investigate
+            the
+            technologies making a cleaner, greener energy supply a reality.</p>
+          <button class="linkBtn" type="button">
+            Read the article <img src="dark-rightArrow.svg" alt="Arrow" class="img-responsive" />
+          </button>
+        </div>
+      </div>
+      <button class="primaryBtn">See more insights <img src="arrow.svg" alt="Arrow" class="img-responsive" /></button>
+    </div>
+  </div>
+</div>
+<!-- ARTICLE BLOCK END -->
 
+<!-- TESTIMONIALS BLOCK START -->
+<div class="testimonialsBlock">
+  <div class="siteContainer">
+    <div class="testimonialsBlock__head">
+    <h2 class="testimonialsBlock__title">Testimonials</h2>
 
-
-<section style="color: white;">
-  <h2>Testimonials</h2>
-
-  <div>
-    <button id="testimonialsPrev" type="button" aria-label="Previous testimonial">PREV</button>
-    <button id="testimonialsNext" type="button" aria-label="Next testimonial">NEXT</button>
+  <div class="testimonialsBlock__navBtns">
+    <button id="testimonialsPrev" type="button" aria-label="Previous testimonial"><img src="circle-leftArrow.svg" alt="Left Arrow Icon" class="img-responsive"></button>
+    <button id="testimonialsNext" type="button" aria-label="Next testimonial"><img src="circle-rightArrow.svg" alt="Right Arrow Icon" class="img-responsive"></button>
+  </div>
   </div>
 
   <swiper-container #testimonialsSwiper init="false">
     <swiper-slide *ngFor="let testimonial of testimonials; trackBy: trackByTestimonialId">
-      <div>
-        <div>
+      <div class="testimonialBox">
+        <div class="testimonialBox__img">
           <img [src]="testimonial.image" [alt]="testimonial.name">
         </div>
 
-        <div>
-          <div>“</div>
+        <div class="testimonialBox__content">
+          <img src="quotes-icon.svg" alt="Quote Icon" class="img-responsive testimonialBox__quoteIcon">
 
-          <div>
-            <strong>{{ testimonial.name }}</strong>
-            <span>({{ testimonial.name }})</span>
+          <div class="testimonialBox__heading">
+          <div class="testimonialBox__auth">
+            <b>{{ testimonial.name }}</b>
+            ({{ testimonial.name }})
+          </div>
+          <div class="testimonialBox__rating">
+            <span [class.fill]="filled" *ngFor="let filled of getStarArray(testimonial.rating)">★</span>
+          </div>
           </div>
 
-          <h3>{{ testimonial.designation }}, {{ testimonial.company }}</h3>
-
-          <div>
-            <span *ngFor="let filled of getStarArray(testimonial.rating)">
-              {{ filled ? '★' : '☆' }}
-            </span>
-          </div>
-
+          <h3 class="testimonialBox__company">{{ testimonial.designation }}, {{ testimonial.company }}</h3>
           <p>{{ testimonial.quote }}</p>
         </div>
       </div>
     </swiper-slide>
   </swiper-container>
-</section>
+  </div>
+</div>
+<!-- TESTIMONIALS BLOCK END -->

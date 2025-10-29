@@ -1,3 +1,4 @@
+// HERO BANNER CSS
 .heroBanner {
     margin: 100px 0;
     position: relative;
@@ -86,6 +87,7 @@
     }
 }
 
+// MEDIA CONTENT CSS
 .mediaContentBox {
     margin: 100px 0;
     position: relative;
@@ -176,6 +178,7 @@
     }
 }
 
+// INDUSTRY MODULE CSS
 .industryModule {
     padding: 110px 0;
     background: #1A3242;
@@ -288,6 +291,7 @@
     }
 }
 
+// CIRCULAR CARD MODULE CSS
 .circularCardModule {
     margin: 100px 0;
     position: relative;
@@ -397,6 +401,288 @@
     }
 }
 
+// NEWS BLOCK CSS
+.newsBlock {
+    margin: 100px 0;
+    position: relative;
+
+    @media only screen and (max-width: 991px) {
+        margin: 80px 0;
+    }
+
+    &__slider {
+        position: relative;
+        padding: 0 15px;
+        @media only screen and (max-width: 991px) {
+            padding: 0 8px;
+        }
+
+        .newsNav {
+            button {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                height: 50px;
+                width: 50px;
+                border: none;
+                background: transparent;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0;
+                z-index: 2;
+                @media only screen and (max-width: 991px) {
+                     height: 35px;
+                width: 35px;
+                }
+
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: contain;
+                }
+            }
+
+            .newsPrev {
+                left: -14px;
+                @media only screen and (max-width: 991px) {
+                   left: -10px;
+                }
+            }
+
+            .newsNext {
+                right: -14px;
+                @media only screen and (max-width: 991px) {
+                   right: -10px;
+                }
+            }
+        }
+
+    }
+
+    &__button {
+        text-align: center;
+        margin-top: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+
+        @media only screen and (max-width: 991px) {
+            margin-top: 40px;
+        }
+    }
+}
+
+.newsCard {
+    border-radius: 20px;
+    border: 1px solid #47555F;
+    background: #192B37;
+    overflow: hidden;
+    position: relative;
+
+    &__imageWrapper {
+        display: flex;
+    }
+
+    &__badge {
+        position: absolute;
+        padding: 12px 55px;
+        border-radius: 0 25px 25px 0;
+        font-size: 16px;
+        line-height: 24px;
+        color: #fff;
+        font-weight: 700;
+        background: #842013;
+        background: linear-gradient(49deg, rgb(132, 32, 19) 0%, rgb(255, 86, 64) 100%);
+        z-index: 1;
+        left: -100%;
+        top: 24px;
+        @media only screen and (max-width: 991px) {
+            padding: 10px 40px;
+        }
+    }
+
+    &__info {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        left: 0;
+        width: 100%;
+        background: #192b3780;
+        background: linear-gradient(0deg, #192b3780 49%, #192b3780 100%);
+        padding: 20px 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+
+    &__title {
+        font-size: 34px;
+        line-height: 44px;
+        color: #FFFFFF;
+        font-weight: 700;
+        font-family: "Open Sans", sans-serif;
+        @media only screen and (max-width: 991px) {
+                    font-size: 26px;
+        line-height: 36px;
+        }
+    }
+
+    &__img {
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .linkBtn {
+        opacity: 0;
+    }
+
+    &:hover {
+        .newsCard__info {
+            background: #000000;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 1) 49%, rgba(0, 0, 0, 0) 100%);
+        }
+
+        .newsCard__badge {
+            left: 0;
+        }
+
+        .linkBtn {
+            opacity: 100%;
+        }
+    }
+}
+
+// TEAM MODULE CSS
+.teamModule {
+    padding: 100px 0;
+    background: #1A3242;
+    border-top: 1px solid #47555F;
+    border-bottom: 1px solid #47555F;
+    position: relative;
+    overflow: hidden;
+    @media only screen and (max-width: 991px) {
+        margin: 80px 0;
+    }
+}
+
+.teamSwiper {
+    overflow: visible;
+
+    swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1;
+        filter: blur(6px);
+        //  opacity: 0.6;
+            transform: scale(0.8);
+            z-index: 2;
+
+        &.swiper-slide-active {
+            opacity: 1;
+            transform: scale(1);
+            z-index: 3;
+            filter: blur(0);
+            .teamCard__image::after {
+                opacity: 0 !important;
+            }
+        }
+
+        &:nth-child(even) {
+            .teamCard {
+                flex-direction: column-reverse;
+            }
+        }
+    }
+}
+
+.teamCard {
+    width: 100%;
+    aspect-ratio: 3/4.5;
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    cursor: pointer;
+        display: flex;
+    flex-direction: column;
+    gap: 20px;
+     @media only screen and (max-width: 991px) {
+        gap: 12px;
+     }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            opacity: 0.5;
+            background: #000000;
+            transition: opacity 0.4s ease;
+        }
+    }
+
+    &__overlay {
+        z-index: 2;
+        text-align: center;
+        transition: transform 0.4s ease;
+    }
+
+    &__name {
+        font-size: 28px;
+        line-height: 36px;
+        font-weight: 700;
+        color: #ffffff;
+        margin: 0 0 4px;
+        font-family: "Open Sans", sans-serif;
+        @media only screen and (max-width: 991px) {
+            font-size: 22px;
+            line-height: 28px;
+            margin: 0;
+        }
+    }
+
+    &__role {
+        font-size: 16px;
+        line-height: 24px;
+        color: rgba(255, 255, 255, 0.85);
+        margin: 0;
+        font-weight: 400;
+         @media only screen and (max-width: 991px) {
+             font-size: 14px;
+        line-height: 20px;
+         }
+    }
+
+    &:hover {
+        .teamCard__image img {
+            transform: scale(1.05);
+        }
+    }
+}
+
+// TIMELINE MODULE CSS
 .timelineModule {
     margin: 100px 0;
     position: relative;
@@ -594,8 +880,7 @@
     }
 }
 
-
-
+// LOGO SLIDER CSS
 .logoSlider {
     background: #1A3242;
     border-top: 1px solid #47555F;
@@ -666,404 +951,3 @@
     }
 }
 
-.newsBlock {
-    margin: 100px 0;
-    position: relative;
-
-    @media only screen and (max-width: 991px) {
-        margin: 80px 0;
-    }
-
-    &__slider {
-        // display: flex;
-        // align-items: center;
-        // gap: 20px;
-        position: relative;
-        padding: 0 15px;
-        @media only screen and (max-width: 991px) {
-            padding: 0 8px;
-        }
-
-        .newsNav {
-            button {
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                height: 50px;
-                width: 50px;
-                border: none;
-                background: transparent;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                padding: 0;
-                z-index: 2;
-                @media only screen and (max-width: 991px) {
-                     height: 35px;
-                width: 35px;
-                }
-
-                img {
-                    height: 100%;
-                    width: 100%;
-                    object-fit: contain;
-                }
-            }
-
-            .newsPrev {
-                left: -14px;
-                @media only screen and (max-width: 991px) {
-                   left: -10px;
-                }
-            }
-
-            .newsNext {
-                right: -14px;
-                @media only screen and (max-width: 991px) {
-                   right: -10px;
-                }
-            }
-        }
-
-    }
-
-    &__button {
-        text-align: center;
-        margin-top: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 12px;
-        flex-wrap: wrap;
-
-        @media only screen and (max-width: 991px) {
-            margin-top: 40px;
-        }
-    }
-}
-
-.newsCard {
-    border-radius: 20px;
-    border: 1px solid #47555F;
-    background: #192B37;
-    overflow: hidden;
-    position: relative;
-
-    &__imageWrapper {
-        display: flex;
-    }
-
-    &__badge {
-        position: absolute;
-        padding: 12px 55px;
-        border-radius: 0 25px 25px 0;
-        font-size: 16px;
-        line-height: 24px;
-        color: #fff;
-        font-weight: 700;
-        background: #842013;
-        background: linear-gradient(49deg, rgb(132, 32, 19) 0%, rgb(255, 86, 64) 100%);
-        z-index: 1;
-        left: -100%;
-        top: 24px;
-        @media only screen and (max-width: 991px) {
-            padding: 10px 40px;
-        }
-    }
-
-    &__info {
-        position: absolute;
-        top: 0;
-        height: 100%;
-        left: 0;
-        width: 100%;
-        background: #192b3780;
-        background: linear-gradient(0deg, #192b3780 49%, #192b3780 100%);
-        padding: 20px 24px;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: flex-end;
-    }
-
-    &__title {
-        font-size: 34px;
-        line-height: 44px;
-        color: #FFFFFF;
-        font-weight: 700;
-        font-family: "Open Sans", sans-serif;
-        @media only screen and (max-width: 991px) {
-                    font-size: 26px;
-        line-height: 36px;
-        }
-    }
-
-    &__img {
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .linkBtn {
-        opacity: 0;
-    }
-
-    &:hover {
-        .newsCard__info {
-            background: #000000;
-            background: linear-gradient(0deg, rgba(0, 0, 0, 1) 49%, rgba(0, 0, 0, 0) 100%);
-        }
-
-        .newsCard__badge {
-            left: 0;
-        }
-
-        .linkBtn {
-            opacity: 100%;
-        }
-    }
-}
-
-// TEAM SLIDER STYLES
-.teamModule {
-    padding: 100px 0;
-    background: #1A3242;
-    border-top: 1px solid #47555F;
-    border-bottom: 1px solid #47555F;
-    position: relative;
-    overflow: hidden;
-    @media only screen and (max-width: 991px) {
-        margin: 80px 0;
-    }
-}
-
-// .teamNav {
-//     display: flex;
-//     gap: 16px;
-//     justify-content: center;
-//     margin-bottom: 50px;
-//     position: relative;
-//     z-index: 10;
-
-//     button {
-//         width: 48px;
-//         height: 48px;
-//         border-radius: 50%;
-//         border: 2px solid rgba(255, 255, 255, 0.3);
-//         background: rgba(255, 255, 255, 0.1);
-//         backdrop-filter: blur(10px);
-//         display: flex;
-//         align-items: center;
-//         justify-content: center;
-//         cursor: pointer;
-//         transition: all 0.3s ease;
-
-//         &:hover {
-//             background: rgba(255, 255, 255, 0.2);
-//             border-color: rgba(255, 255, 255, 0.5);
-//             transform: scale(1.05);
-//         }
-
-//         img {
-//             width: 20px;
-//             height: 20px;
-//             filter: brightness(0) invert(1);
-//         }
-//     }
-// }
-
-.teamSwiper {
-    overflow: visible;
-
-    swiper-slide {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        z-index: 1;
-        filter: blur(6px);
-        //  opacity: 0.6;
-            transform: scale(0.8);
-            z-index: 2;
-
-        &.swiper-slide-active {
-            opacity: 1;
-            transform: scale(1);
-            z-index: 3;
-            filter: blur(0);
-            .teamCard__image::after {
-                opacity: 0 !important;
-            }
-        }
-
-        &.swiper-slide-prev,
-        &.swiper-slide-next {
-           
-        }
-        &:nth-child(even) {
-            .teamCard {
-                flex-direction: column-reverse;
-            }
-        }
-    }
-}
-
-.teamCard {
-    width: 100%;
-    aspect-ratio: 3/4.5;
-    position: relative;
-    border-radius: 16px;
-    overflow: hidden;
-    transition: all 0.4s ease;
-    cursor: pointer;
-        display: flex;
-    flex-direction: column;
-    gap: 20px;
-     @media only screen and (max-width: 991px) {
-        gap: 12px;
-     }
-
-    &__image {
-        width: 100%;
-        height: 100%;
-        position: relative;
-        overflow: hidden;
-        border-radius: 10px;
-
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-        }
-
-        &::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 100%;
-            opacity: 0.5;
-            background: #000000;
-            transition: opacity 0.4s ease;
-        }
-    }
-
-    &__overlay {
-        z-index: 2;
-        text-align: center;
-        transition: transform 0.4s ease;
-    }
-
-    &__name {
-        font-size: 28px;
-        line-height: 36px;
-        font-weight: 700;
-        color: #ffffff;
-        margin: 0 0 4px;
-         font-family: "Open Sans", sans-serif;
-         @media only screen and (max-width: 991px) {
-             font-size: 22px;
-        line-height: 28px;
-        margin: 0;
-         }
-    }
-
-    &__role {
-        font-size: 16px;
-        line-height: 24px;
-        color: rgba(255, 255, 255, 0.85);
-        margin: 0;
-        font-weight: 400;
-         @media only screen and (max-width: 991px) {
-             font-size: 14px;
-        line-height: 20px;
-         }
-    }
-
-    &:hover {
-        .teamCard__image img {
-            transform: scale(1.05);
-        }
-    }
-}
-
-// Responsive styles
-// @media (max-width: 1024px) {
-
-
-//     .teamCard {
-//         max-width: 350px;
-
-//         &__name {
-//             font-size: 22px;
-//         }
-
-//         &__role {
-//             font-size: 15px;
-//         }
-//     }
-// }
-
-// @media (max-width: 768px) {
-//     .teamModule {
-//         padding: 50px 0;
-//     }
-
-//     .teamNav {
-//         margin-bottom: 40px;
-
-//         button {
-//             width: 44px;
-//             height: 44px;
-//         }
-//     }
-
-//     .teamSwiper {
-//         padding: 30px 0 50px;
-
-//         swiper-slide {
-//             opacity: 0.3;
-//             transform: scale(0.8);
-
-//             &.swiper-slide-active {
-//                 opacity: 1;
-//                 transform: scale(1);
-//             }
-//         }
-//     }
-
-//     .teamCard {
-//         max-width: 300px;
-
-//         &__overlay {
-//             padding: 24px 20px;
-//         }
-
-//         &__name {
-//             font-size: 20px;
-//         }
-
-//         &__role {
-//             font-size: 14px;
-//         }
-//     }
-// }
-
-// @media (max-width: 480px) {
-//     .teamModule {
-//         padding: 40px 0;
-//     }
-
-//     .teamCard {
-//         max-width: 280px;
-
-//         &__name {
-//             font-size: 18px;
-//         }
-
-//         &__role {
-//             font-size: 13px;
-//         }
-//     }
-// }

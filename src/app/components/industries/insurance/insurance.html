@@ -1,0 +1,76 @@
+<app-breadcrumb [config]="breadcrumbConfig"></app-breadcrumb>
+
+
+
+  <mat-tab-group [(selectedIndex)]="selectedTabIndex" (selectedTabChange)="onTabChange($event)">
+  <mat-tab *ngFor="let tab of tabs" [label]="tab.label">
+    <ng-container *ngIf="selectedTabContent">
+      
+      <div>
+        <!-- Left Image Card -->
+        <div>
+          <img [src]="selectedTabContent.image" alt="content image">
+          <div>{{ selectedTabContent.badge }}</div>
+          <div>{{ selectedTabContent.readTime }}</div>
+          <div>{{ selectedTabContent.title }}</div>
+        </div>
+
+        <!-- Right Content -->
+        <div>
+          <p>{{ selectedTabContent.description }}</p>
+
+          <div>
+            <p><strong>We support you with expertise in:</strong></p>
+            <ul>
+              <li *ngFor="let item of selectedTabContent.list">{{ item }}</li>
+            </ul>
+          </div>
+
+          <a>{{ selectedTabContent.linkText }}</a>
+        </div>
+      </div>
+
+    </ng-container>
+  </mat-tab>
+</mat-tab-group>
+
+
+<div class="testimonialsBlock">
+  <div class="siteContainer">
+    <div class="testimonialsBlock__head">
+    <h2 class="testimonialsBlock__title">Testimonials</h2>
+
+  <div class="testimonialsBlock__navBtns">
+    <button id="testimonialsPrev" type="button" aria-label="Previous testimonial"><img src="circle-leftArrow.svg" alt="Left Arrow Icon" class="img-responsive"></button>
+    <button id="testimonialsNext" type="button" aria-label="Next testimonial"><img src="circle-rightArrow.svg" alt="Right Arrow Icon" class="img-responsive"></button>
+  </div>
+  </div>
+
+  <swiper-container #testimonialsSwiper init="false">
+    <swiper-slide *ngFor="let testimonial of testimonials; trackBy: trackByTestimonialId">
+      <div class="testimonialBox">
+        <div class="testimonialBox__img">
+          <img [src]="testimonial.image" [alt]="testimonial.name">
+        </div>
+
+        <div class="testimonialBox__content">
+          <img src="quotes-icon.svg" alt="Quote Icon" class="img-responsive testimonialBox__quoteIcon">
+
+          <div class="testimonialBox__heading">
+          <div class="testimonialBox__auth">
+            <b>{{ testimonial.name }}</b>
+            ({{ testimonial.name }})
+          </div>
+          <div class="testimonialBox__rating">
+            <span [class.fill]="filled" *ngFor="let filled of getStarArray(testimonial.rating)">★</span>
+          </div>
+          </div>
+
+          <h3 class="testimonialBox__company">{{ testimonial.designation }}, {{ testimonial.company }}</h3>
+          <p>{{ testimonial.quote }}</p>
+        </div>
+      </div>
+    </swiper-slide>
+  </swiper-container>
+  </div>
+</div>

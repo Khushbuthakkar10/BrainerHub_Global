@@ -91,6 +91,10 @@
             color: #fff;
             font-weight: 700;
             font-family: "Open Sans", sans-serif;
+            @media only screen and (max-width: 991px) {
+                      font-size: 20px;
+                    line-height: 28px;
+                }
 
             &::after {
                 content: '';

@@ -31,7 +31,7 @@ textarea:focus-within {
   outline: none;
 }
 
-.img-respoansive {
+.img-responsive {
   max-width: 100%;
   height: auto;
 }
@@ -309,4 +309,74 @@ ul {
       line-height: 20px;
     }
   }
+}
+
+.logoSlider {
+    background: #1A3242;
+    border-top: 1px solid #47555F;
+    border-bottom: 1px solid #47555F;
+    padding: 70px 0;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+
+    @media only screen and (max-width: 991px) {
+        padding: 20px 0;
+    }
+
+
+    &__track {
+        animation: scroll 40s linear infinite;
+        display: flex;
+        width: calc(250px * 14);
+        gap: 150px;
+
+        @media only screen and (max-width: 991px) {
+            gap: 100px;
+        }
+    }
+
+    .logoSlide {
+        height: 180px;
+        width: 180px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        min-width: 180px;
+
+        @media only screen and (max-width: 991px) {
+            height: 120px;
+            width: 120px;
+            min-width: 120px;
+        }
+
+        img {
+            object-fit: contain;
+            height: 180px;
+            width: 180px;
+
+            @media only screen and (max-width: 991px) {
+                height: 120px;
+                width: 120px;
+            }
+        }
+
+        &::after {
+            content: '';
+            height: 18px;
+            width: 48px;
+            position: absolute;
+            background-image: url('../public/Vector.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            right: -100px;
+
+            @media only screen and (max-width: 991px) {
+                height: 15px;
+                width: 32px;
+                right: -66px;
+            }
+        }
+    }
 }

@@ -40,7 +40,7 @@ export class EnergyAndResources implements AfterViewInit, OnDestroy {
       { label: 'Energy and Resources' }
     ],
     backgroundImage: '/assets/images/energy-and-resources.svg',
-    logo: '/assets/images/energy-icon.svg',
+    logo: '/assets/images/energy_Resources.svg',
     title: 'Energy and Resources',
   };
 

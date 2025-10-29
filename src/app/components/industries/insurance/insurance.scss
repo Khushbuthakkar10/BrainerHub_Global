@@ -1,0 +1,205 @@
+.testimonialsBlock {
+    margin: 100px 0;
+    position: relative;
+
+    @media only screen and (max-width: 991px) {
+        margin: 80px 0;
+    }
+
+    &__head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        margin-bottom: 60px;
+
+        @media only screen and (max-width: 991px) {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__title {
+        font-size: 48px;
+        color: #FFFFFF;
+        line-height: 62px;
+        font-weight: 700;
+        position: relative;
+        font-family: "Open Sans", sans-serif;
+
+        @media only screen and (max-width: 991px) {
+            font-size: 32px;
+            line-height: 42px;
+        }
+
+        &::after {
+            content: '';
+            height: 4px;
+            width: 90px;
+            display: block;
+            background: #842013;
+            background: linear-gradient(49deg, rgba(132, 32, 19, 1) 0%, rgba(255, 86, 64, 1) 100%);
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+    }
+
+    &__navBtns {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        @media only screen and (max-width: 991px) {
+            gap: 8px;
+        }
+
+        button {
+            height: 70px;
+            width: 70px;
+            border: none;
+            background: transparent;
+            border-radius: 0;
+            box-shadow: none;
+
+            @media only screen and (max-width: 991px) {
+                height: 40px;
+                width: 40px;
+            }
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: contain;
+            }
+        }
+    }
+}
+
+.testimonialBox {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+
+    @media only screen and (max-width: 991px) {
+        gap: 24px;
+    }
+    @media only screen and (max-width: 767px) {
+        gap: 20px;
+        flex-direction: column;
+    }
+
+    &__img {
+        height: 450px;
+        width: 450px;
+        min-width: 450px;
+        border-radius: 50% 0 50% 50%;
+        overflow: hidden;
+
+        @media only screen and (max-width: 991px) {
+            height: 300px;
+            width: 300px;
+            min-width: 300px;
+        }
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__auth {
+        font-size: 20px;
+        line-height: 28px;
+        font-weight: 200;
+        color: #fff;
+        font-family: "Open Sans", sans-serif;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        flex-wrap: wrap;
+
+        @media only screen and (max-width: 991px) {
+            font-size: 18px;
+            line-height: 28px;
+        }
+
+        b {
+            font-weight: 700;
+        }
+    }
+
+    &__heading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        margin-bottom: 10px;
+        @media only screen and (max-width: 991px) {
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+        }
+    }
+
+    &__company {
+        color: #FFFFFF;
+        font-weight: 700;
+        position: relative;
+        font-family: "Open Sans", sans-serif;
+        font-size: 36px;
+        line-height: 48px;
+
+        @media only screen and (max-width: 991px) {
+            font-size: 28px;
+            line-height: 38px;
+        }
+    }
+
+    p {
+        font-size: 16px;
+        color: #eee;
+        line-height: 24px;
+        margin-top: 22px;
+
+        @media only screen and (max-width: 991px) {
+            font-size: 14px;
+            line-height: 20px;
+            margin-top: 12px;
+        }
+    }
+
+    &__rating {
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        span {
+            height: 30px !important;
+            font-size: 30px;
+            line-height: 30px;
+            color: #AAAAAA;
+            display: inline-block;
+
+            @media only screen and (max-width: 991px) {
+                height: 24px !important;
+                font-size: 24px;
+                line-height: 24px;
+            }
+
+            &.fill {
+                color: #FFC107;
+            }
+        }
+    }
+
+    &__quoteIcon {
+        height: 70px;
+        width: 70px;
+        object-fit: contain;
+        margin-bottom: 10px;
+
+        @media only screen and (max-width: 991px) {
+            height: 50px;
+            width: 50px;
+            margin-bottom: 8px;
+        }
+    }
+}
