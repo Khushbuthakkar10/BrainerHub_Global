@@ -1,0 +1,46 @@
+<app-breadcrumb [config]="breadcrumbConfig"></app-breadcrumb>
+
+<div class="tabSection">
+  <div class="siteContainer">
+    <div class="centerheading">
+      <h3 class="centerheading__title">Insurance</h3>
+    </div>
+    <mat-tab-group [(selectedIndex)]="selectedTabIndex" (selectedTabChange)="onTabChange($event)">
+      <mat-tab *ngFor="let tab of tabs" [label]="tab.label">
+        <ng-container *ngIf="selectedTabContent">
+
+          <div class="tabSection__data">
+            <!-- Left Image Card -->
+            <div class="smallActicleCard">
+              <div class="smallActicleCard__img">
+                <img [src]="selectedTabContent.image" alt="content image" class="img-responsive">
+                <div class="smallActicleCard__badge">{{ selectedTabContent.badge }}</div>
+              </div>
+
+              <div class="smallActicleCard__info">
+                <div class="smallActicleCard__time"><img src="clockIcon.png" class="img-responsive" alt="Clock Icon">{{ selectedTabContent.readTime }}</div>
+                <h5 class="smallActicleCard__title">{{ selectedTabContent.title }}</h5>
+              </div>
+            </div>
+
+            <!-- Right Content -->
+            <div class="tabSection__dataContent">
+              <p>{{ selectedTabContent.description }}</p>
+
+              <div class="tabSection__dataList">
+                <h6>We support you with expertise in:</h6>
+                <ul>
+                  <li *ngFor="let item of selectedTabContent.list">{{ item }}</li>
+                </ul>
+              </div>
+              <button class="linkBtn" type="button">
+                {{ selectedTabContent.linkText }} <img src="arrow.svg" alt="Arrow" class="img-responsive" />
+              </button>
+            </div>
+          </div>
+
+        </ng-container>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+  </div>

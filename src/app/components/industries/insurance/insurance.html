@@ -1,76 +1,348 @@
 <app-breadcrumb [config]="breadcrumbConfig"></app-breadcrumb>
 
-
-
-  <mat-tab-group [(selectedIndex)]="selectedTabIndex" (selectedTabChange)="onTabChange($event)">
-  <mat-tab *ngFor="let tab of tabs" [label]="tab.label">
-    <ng-container *ngIf="selectedTabContent">
-      
-      <div>
-        <!-- Left Image Card -->
-        <div>
-          <img [src]="selectedTabContent.image" alt="content image">
-          <div>{{ selectedTabContent.badge }}</div>
-          <div>{{ selectedTabContent.readTime }}</div>
-          <div>{{ selectedTabContent.title }}</div>
-        </div>
-
-        <!-- Right Content -->
-        <div>
-          <p>{{ selectedTabContent.description }}</p>
-
-          <div>
-            <p><strong>We support you with expertise in:</strong></p>
-            <ul>
-              <li *ngFor="let item of selectedTabContent.list">{{ item }}</li>
-            </ul>
-          </div>
-
-          <a>{{ selectedTabContent.linkText }}</a>
-        </div>
-      </div>
-
-    </ng-container>
-  </mat-tab>
-</mat-tab-group>
-
-
-<div class="testimonialsBlock">
+<!-- COUNTER SECTION START -->
+<div class="counterSection">
   <div class="siteContainer">
-    <div class="testimonialsBlock__head">
-    <h2 class="testimonialsBlock__title">Testimonials</h2>
-
-  <div class="testimonialsBlock__navBtns">
-    <button id="testimonialsPrev" type="button" aria-label="Previous testimonial"><img src="circle-leftArrow.svg" alt="Left Arrow Icon" class="img-responsive"></button>
-    <button id="testimonialsNext" type="button" aria-label="Next testimonial"><img src="circle-rightArrow.svg" alt="Right Arrow Icon" class="img-responsive"></button>
-  </div>
-  </div>
-
-  <swiper-container #testimonialsSwiper init="false">
-    <swiper-slide *ngFor="let testimonial of testimonials; trackBy: trackByTestimonialId">
-      <div class="testimonialBox">
-        <div class="testimonialBox__img">
-          <img [src]="testimonial.image" [alt]="testimonial.name">
-        </div>
-
-        <div class="testimonialBox__content">
-          <img src="quotes-icon.svg" alt="Quote Icon" class="img-responsive testimonialBox__quoteIcon">
-
-          <div class="testimonialBox__heading">
-          <div class="testimonialBox__auth">
-            <b>{{ testimonial.name }}</b>
-            ({{ testimonial.name }})
-          </div>
-          <div class="testimonialBox__rating">
-            <span [class.fill]="filled" *ngFor="let filled of getStarArray(testimonial.rating)">★</span>
-          </div>
-          </div>
-
-          <h3 class="testimonialBox__company">{{ testimonial.designation }}, {{ testimonial.company }}</h3>
-          <p>{{ testimonial.quote }}</p>
-        </div>
+    <div class="centerheading">
+      <h3 class="centerheading__title">Accelerating insurance innovation</h3>
+      <p>From idea to production, we help carriers, brokers and technology providers accelerate insurance innovation
+        through successful delivery of agile and digital transformation projects globally.</p>
+    </div>
+    <div class="counterSection__inner">
+      <div class="counterCard">
+        <img src="Insurance clients.png" alt="User icon" class="img-responsive counterCard__img" />
+        <h6 class="counterCard__title">Insurance clients</h6>
+        <div class="counterCard__no">45 <img src="plus-symbol-brush-stroke.svg" alt="plus icon"
+            class="img-responsive" /></div>
       </div>
-    </swiper-slide>
-  </swiper-container>
+      <div class="counterCard">
+        <img src="Ongoing projects.png" alt="User icon" class="img-responsive counterCard__img" />
+        <h6 class="counterCard__title">Ongoing projects</h6>
+        <div class="counterCard__no">112 <img src="plus-symbol-brush-stroke.svg" alt="plus icon"
+            class="img-responsive" /></div>
+      </div>
+      <div class="counterCard">
+        <img src="Years of delivery.png" alt="User icon" class="img-responsive counterCard__img" />
+        <h6 class="counterCard__title">Years of delivery</h6>
+        <div class="counterCard__no">20 <img src="plus-symbol-brush-stroke.svg" alt="plus icon"
+            class="img-responsive" /></div>
+      </div>
+      <div class="counterCard">
+        <img src="Years of delivery.png" alt="User icon" class="img-responsive counterCard__img" />
+        <h6 class="counterCard__title">Years of delivery</h6>
+        <div class="counterCard__no">20 <img src="plus-symbol-brush-stroke.svg" alt="plus icon"
+            class="img-responsive" /></div>
+      </div>
+    </div>
+    <div class="counterSection__conetnt">
+      <h6>Whatever your aspirations - the largest, most efficient, the fastest, most specialist, most innovative - we
+        build exemplary teams to support you.</h6>
+      <p>We maintain long-term relationships with leading global market players in general and in speciality markets. We
+        deliver against our customers’ strategic goals, whether they are focused on speed to market, pure efficiency,
+        innovation, driving value and insight from data or increasing market share.  </p>
+    </div>
   </div>
 </div>
+<!-- COUNTER SECTION END -->
+
+<!-- LOGO SLIDER START -->
+<div class="logoSlider">
+  <div class="logoSlider__track">
+    <div class="logoSlide">
+      <img src="hudsonMX.png" class="img-responsive" alt="" />
+    </div>
+    <div class="logoSlide">
+      <img src="ORf.png" class="img-responsive" alt="" />
+    </div>
+    <div class="logoSlide">
+      <img src="ekos.png" class="img-responsive" alt="" />
+    </div>
+    <div class="logoSlide">
+      <img src="ascendant.png" class="img-responsive" alt="" />
+    </div>
+    <div class="logoSlide">
+      <img src="hudsonMX.png" class="img-responsive" alt="" />
+    </div>
+    <div class="logoSlide">
+      <img src="ORf.png" class="img-responsive" alt="" />
+    </div>
+    <div class="logoSlide">
+      <img src="ekos.png" class="img-responsive" alt="" />
+    </div>
+    <div class="logoSlide">
+      <img src="ascendant.png" class="img-responsive" alt="" />
+    </div>
+    <div class="logoSlide">
+      <img src="hudsonMX.png" class="img-responsive" alt="" />
+    </div>
+    <div class="logoSlide">
+      <img src="ORf.png" class="img-responsive" alt="" />
+    </div>
+    <div class="logoSlide">
+      <img src="ekos.png" class="img-responsive" alt="" />
+    </div>
+    <div class="logoSlide">
+      <img src="ascendant.png" class="img-responsive" alt="" />
+    </div>
+    <div class="logoSlide">
+      <img src="hudsonMX.png" class="img-responsive" alt="" />
+    </div>
+    <div class="logoSlide">
+      <img src="ORf.png" class="img-responsive" alt="" />
+    </div>
+    <div class="logoSlide">
+      <img src="ekos.png" class="img-responsive" alt="" />
+    </div>
+    <div class="logoSlide">
+      <img src="ascendant.png" class="img-responsive" alt="" />
+    </div>
+  </div>
+</div>
+<!-- LOGO SLIDER END -->
+
+<!-- CONTENT BLOCK START -->
+<div class="contentBlock">
+  <div class="siteContainer">
+    <div class="centerheading">
+      <h3 class="centerheading__title">Partnerships: platform and cloud
+        implementations / integration's</h3>
+    </div>
+    <div class="contentBlock__inner">
+      <p>With a wealth of customers and sector knowledge and the realisation that insurance touches it all, we bring
+        customers and their challenges together to find focused solutions.</p>
+      <p>Our varied and dynamic partner ecosystem places us at the heart of industry evolution, enabling us to help our
+        customers look ahead and pivot to keep pace with change.  </p>
+      <p>Need help implementing or integrating technologies? We have the experience to seamlessly upskill and bolster
+        your teams. From guidance with market positioning, to transformative platform implementations or complex version
+        upgrades, we’re here to help.   </p>
+      <div class="contentBlock__row">
+        <div class="contentBlock__text">
+          <h6>We support you with expertise in:</h6>
+          <ul class="contentBlock__list">
+            <li>Strategy and positioning</li>
+            <li>Trans-formative platform implementations and integration</li>
+            <li>User engagement</li>
+            <li>Managed support services</li>
+            <li>Complex version upgrades</li>
+            <li>Intelligent automation, machine learning and AI</li>
+            <li>API strategy and integration</li>
+          </ul>
+        </div>
+        <div class="contentBlock__img">
+          <img src="contentImage.png" class="img-responsive" alt="Content Image" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- CONTENT BLOCK END -->
+
+<!-- TAB SECTION START -->
+<div class="tabSection">
+  <div class="siteContainer">
+    <div class="centerheading">
+      <h3 class="centerheading__title">Insurance</h3>
+    </div>
+    <mat-tab-group [(selectedIndex)]="selectedTabIndex" (selectedTabChange)="onTabChange($event)">
+      <mat-tab *ngFor="let tab of tabs" [label]="tab.label">
+        <ng-container *ngIf="selectedTabContent">
+
+          <div class="tabSection__data">
+            <!-- Left Image Card -->
+            <div class="smallActicleCard">
+              <div class="smallActicleCard__img">
+                <img [src]="selectedTabContent.image" alt="content image" class="img-responsive">
+                <div class="smallActicleCard__badge">{{ selectedTabContent.badge }}</div>
+              </div>
+
+              <div class="smallActicleCard__info">
+                <div class="smallActicleCard__time"><img src="clockIcon.png" class="img-responsive" alt="Clock Icon">{{ selectedTabContent.readTime }}</div>
+                <h5 class="smallActicleCard__title">{{ selectedTabContent.title }}</h5>
+              </div>
+            </div>
+
+            <!-- Right Content -->
+            <div class="tabSection__dataContent">
+              <p>{{ selectedTabContent.description }}</p>
+
+              <div class="tabSection__dataList">
+                <h6>We support you with expertise in:</h6>
+                <ul>
+                  <li *ngFor="let item of selectedTabContent.list">{{ item }}</li>
+                </ul>
+              </div>
+              <button class="linkBtn" type="button">
+                {{ selectedTabContent.linkText }} <img src="arrow.svg" alt="Arrow" class="img-responsive" />
+              </button>
+            </div>
+          </div>
+
+        </ng-container>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>
+  <!-- TAB SECTION END -->
+
+  <!-- CASE STUDY SECTION START -->
+  <div class="caseStudySection">
+    <div class="siteContainer">
+      <div class="centerheading">
+        <h3 class="centerheading__title">See our work in action</h3>
+      </div>
+      <div class="caseStudySection__inner">
+        <div class="caseStudyCard">
+          <div class="caseStudyCard__image">
+            <span class="caseStudyCard__badge">Case study</span>
+            <img src="CaseStudyImage.png" alt="Case study Image" class="img-responsive caseStudyCard__img"
+              loading="lazy" />
+          </div>
+          <div class="caseStudyCard__content">
+            <h5 class="caseStudyCard__title">Insurance Aggregator Improves Claims Success Rate</h5>
+            <p>Faced with growth constraints and scalability limits, this insurance aggregator needed to evolve its
+              platform and integrate many factors systematically and autonomously.</p>
+            <button class="linkBtn" type="button">
+              Read More <img src="arrow.svg" alt="Arrow" class="img-responsive" />
+            </button>
+          </div>
+        </div>
+        <div class="caseStudyCard">
+          <div class="caseStudyCard__image">
+            <span class="caseStudyCard__badge">Case study</span>
+            <img src="CaseStudyImage.png" alt="Case study Image" class="img-responsive caseStudyCard__img"
+              loading="lazy" />
+          </div>
+          <div class="caseStudyCard__content">
+            <h5 class="caseStudyCard__title">Insurance Aggregator Improves Claims Success Rate</h5>
+            <p>Faced with growth constraints and scalability limits, this insurance aggregator needed to evolve its
+              platform and integrate many factors systematically and autonomously.</p>
+            <button class="linkBtn" type="button">
+              Read More <img src="arrow.svg" alt="Arrow" class="img-responsive" />
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="caseStudySection__button">
+        <button class="primaryBtn">Explore more case studies <img src="arrow.svg" alt="Arrow"
+            class="img-responsive" /></button>
+      </div>
+    </div>
+  </div>
+  <!-- CASE STUDY SECTION END -->
+
+  <!-- ARTICLE BLOCK START -->
+  <div class="articleBlock">
+    <div class="siteContainer">
+      <div class="centerheading">
+        <h3 class="centerheading__title">See our work in action</h3>
+      </div>
+      <div class="articleBlock__inner">
+        <div class="articleCard">
+          <div class="articleCard__image">
+            <img src="CaseStudyImage.png" alt="Case study Image" class="img-responsive articleCard__img"
+              loading="lazy" />
+          </div>
+          <div class="articleCard__content">
+            <h5 class="articleCard__title">5 Questions in Smart Energy That Will Define the Net Zero Transition</h5>
+            <p>Distributed energy resources and smarter grids could be the key to a greener future. Let's investigate
+              the
+              technologies making a cleaner, greener energy supply a reality.</p>
+            <button class="linkBtn" type="button">
+              Read the article <img src="dark-rightArrow.svg" alt="Arrow" class="img-responsive" />
+            </button>
+          </div>
+        </div>
+        <div class="articleCard">
+          <div class="articleCard__image">
+            <img src="CaseStudyImage.png" alt="Case study Image" class="img-responsive articleCard__img"
+              loading="lazy" />
+          </div>
+          <div class="articleCard__content">
+            <h5 class="articleCard__title">5 Questions in Smart Energy That Will Define the Net Zero Transition</h5>
+            <p>Distributed energy resources and smarter grids could be the key to a greener future. Let's investigate
+              the
+              technologies making a cleaner, greener energy supply a reality.</p>
+            <button class="linkBtn" type="button">
+              Read the article <img src="dark-rightArrow.svg" alt="Arrow" class="img-responsive" />
+            </button>
+          </div>
+        </div>
+        <div class="articleCard">
+          <div class="articleCard__image">
+            <img src="CaseStudyImage.png" alt="Case study Image" class="img-responsive articleCard__img"
+              loading="lazy" />
+          </div>
+          <div class="articleCard__content">
+            <h5 class="articleCard__title">5 Questions in Smart Energy That Will Define the Net Zero Transition</h5>
+            <p>Distributed energy resources and smarter grids could be the key to a greener future. Let's investigate
+              the
+              technologies making a cleaner, greener energy supply a reality.</p>
+            <button class="linkBtn" type="button">
+              Read the article <img src="dark-rightArrow.svg" alt="Arrow" class="img-responsive" />
+            </button>
+          </div>
+        </div>
+        <div class="articleCard">
+          <div class="articleCard__image">
+            <img src="CaseStudyImage.png" alt="Case study Image" class="img-responsive articleCard__img"
+              loading="lazy" />
+          </div>
+          <div class="articleCard__content">
+            <h5 class="articleCard__title">5 Questions in Smart Energy That Will Define the Net Zero Transition</h5>
+            <p>Distributed energy resources and smarter grids could be the key to a greener future. Let's investigate
+              the
+              technologies making a cleaner, greener energy supply a reality.</p>
+            <button class="linkBtn" type="button">
+              Read the article <img src="dark-rightArrow.svg" alt="Arrow" class="img-responsive" />
+            </button>
+          </div>
+        </div>
+        <button class="primaryBtn">See more insights <img src="arrow.svg" alt="Arrow" class="img-responsive" /></button>
+      </div>
+    </div>
+  </div>
+  <!-- ARTICLE BLOCK END -->
+
+  <!-- TESTIMONIALS BLOCK START -->
+  <div class="testimonialsBlock">
+    <div class="siteContainer">
+      <div class="testimonialsBlock__head">
+        <h2 class="testimonialsBlock__title">Testimonials</h2>
+
+        <div class="testimonialsBlock__navBtns">
+          <button id="testimonialsPrev" type="button" aria-label="Previous testimonial"><img src="circle-leftArrow.svg"
+              alt="Left Arrow Icon" class="img-responsive"></button>
+          <button id="testimonialsNext" type="button" aria-label="Next testimonial"><img src="circle-rightArrow.svg"
+              alt="Right Arrow Icon" class="img-responsive"></button>
+        </div>
+      </div>
+
+      <swiper-container #testimonialsSwiper init="false">
+        <swiper-slide *ngFor="let testimonial of testimonials; trackBy: trackByTestimonialId">
+          <div class="testimonialBox">
+            <div class="testimonialBox__img">
+              <img [src]="testimonial.image" [alt]="testimonial.name">
+            </div>
+
+            <div class="testimonialBox__content">
+              <img src="quotes-icon.svg" alt="Quote Icon" class="img-responsive testimonialBox__quoteIcon">
+
+              <div class="testimonialBox__heading">
+                <div class="testimonialBox__auth">
+                  <b>{{ testimonial.name }}</b>
+                  ({{ testimonial.name }})
+                </div>
+                <div class="testimonialBox__rating">
+                  <span [class.fill]="filled" *ngFor="let filled of getStarArray(testimonial.rating)">★</span>
+                </div>
+              </div>
+
+              <h3 class="testimonialBox__company">{{ testimonial.designation }}, {{ testimonial.company }}</h3>
+              <p>{{ testimonial.quote }}</p>
+            </div>
+          </div>
+        </swiper-slide>
+      </swiper-container>
+    </div>
+  </div>
+  <!-- TESTIMONIALS BLOCK End -->

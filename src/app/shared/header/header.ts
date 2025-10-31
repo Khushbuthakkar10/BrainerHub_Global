@@ -36,4 +36,18 @@ export class Header {
   ngOnInit() {
     this.checkScreen();
   }
+  isSearchActive = false;
+
+  onSearchClick(event: Event) {
+    // Only toggle when clicking SVG or the container, not input
+    this.isSearchActive = !this.isSearchActive;
+  }
+
+  @HostListener('document:click', ['$event'])
+  handleOutsideClick(event: Event) {
+    const target = event.target as HTMLElement;
+    if (!target.closest('.mainHeader-search')) {
+      this.isSearchActive = false;
+    }
+  }
 }
